@@ -3,8 +3,7 @@
 ## 작업 일지
 ### 2018-10-08
 - 기본 셋팅
-- App Intro Component 생성
-- App Intro Component 적용
+- App Intro Component 생성 & 적용
 
 ## Project setup
 ```
