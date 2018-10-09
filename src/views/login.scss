@@ -1,0 +1,45 @@
+$input-border-radius: 8px;
+
+.login-wrap {
+  position: relative;
+  width: 100vw;
+  height: 29.6vh;
+  background-color: #ff9922;
+  padding-top: 2.2vh;
+  padding-left: 4.4vw;
+}
+
+.login-input {
+  width: 91.1vw;
+  height: 46px;
+  margin-bottom: 6px !important;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+}
+
+.v-input__slot {
+  border-radius: $input-border-radius;
+}
+
+.login-submit {
+  font-weight: bold;
+  font-size: 15px;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+  background-color: #f7be7b !important;
+  color: #ffffff !important;
+  margin: 0 0 6px 0 !important;
+}
+
+.login-join {
+  display: block;
+  margin-top: 10px;
+  font-size: 13px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.15;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+}
