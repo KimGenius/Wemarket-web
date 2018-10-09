@@ -5,6 +5,9 @@
 - 기본 셋팅
 - App Intro Component 생성 & 적용
 
+### 2018-10-09
+- Login 화면 작업
+
 ## Project setup
 ```
 npm install
