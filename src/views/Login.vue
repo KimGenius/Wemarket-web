@@ -1,6 +1,5 @@
 <template>
     <div class="main">
-        <link rel="stylesheet" href="./login.scss">
         <app-intro :app-name=appName />
         <div class="login-wrap">
             <v-form v-model="valid">
