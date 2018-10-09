@@ -8,12 +8,13 @@
 
 .login-input {
   width: 91.1vw;
-  height: 46px;
+  height: 46px !important;
   margin-bottom: 6px !important;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16); }
 
-.v-input__slot {
-  border-radius: 8px; }
+.v-input__slot,
+.v-btn {
+  border-radius: 5px !important; }
 
 .login-submit {
   font-weight: bold;
