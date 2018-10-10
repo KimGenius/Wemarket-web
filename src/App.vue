@@ -6,7 +6,7 @@
 
 <script>
 import Vue from 'vue'
-import Login from './views/Login.vue'
+import Login from './views/Login/Login.vue'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 

@@ -25,7 +25,7 @@
 </template>
 
 <script>
-  import AppIntro from "../components/appIntro";
+  import AppIntro from "../../components/appIntro";
   import './login.scss';
 
   export default {
