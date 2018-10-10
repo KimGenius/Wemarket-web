@@ -8,6 +8,9 @@
 ### 2018-10-09
 - Login 화면 작업
 
+### 2018-10-10
+- 가입 버튼 정렬 수정
+
 ## Project setup
 ```
 npm install
