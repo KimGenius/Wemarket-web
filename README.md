@@ -10,6 +10,9 @@
 
 ### 2018-10-10
 - 가입 버튼 정렬 수정
+- waitjoin? 페이지 작업중
+- 라우팅 작업
+- NotFound 기초 작업
 
 ## Project setup
 ```
