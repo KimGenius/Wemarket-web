@@ -1,23 +1,23 @@
 <template>
-    <div class="main">
-        <app-intro :app-name=appName />
-        <div class="login-wrap">
-            <v-form v-model="valid">
+    <div class='main'>
+        <app-intro app-name='위마켓' />
+        <div class='login-wrap'>
+            <v-form v-model='valid'>
                 <v-flex xs12 sm6 md3>
                     <v-text-field
-                            class="login-input"
-                            label="Solo"
-                            placeholder="아이디"
+                            class='login-input'
+                            label='Solo'
+                            placeholder='아이디'
                             solo
                     ></v-text-field>
                     <v-text-field
-                            class="login-input"
-                            label="Solo"
-                            placeholder="패스워드"
+                            class='login-input'
+                            label='Solo'
+                            placeholder='패스워드'
                             solo
                     ></v-text-field>
-                    <v-btn class="login-input login-submit">로그인</v-btn>
-                    <a class="login-join" href="#">아직 계정이 없으신가요? 회원가입</a>
+                    <v-btn class='login-input login-submit'>로그인</v-btn>
+                    <router-link to="/waitjoin" class='login-join'>아직 계정이 없으신가요? 회원가입</router-link>
                 </v-flex>
             </v-form>
         </div>
@@ -25,15 +25,12 @@
 </template>
 
 <script>
-  import AppIntro from "../../components/appIntro";
-  import './login.scss';
+  import AppIntro from '../../components/appIntro'
+  import './login.scss'
 
   export default {
     name: 'Login',
     components: {AppIntro},
-    props: {
-      appName: String
-    },
     data: () => ({
       valid: false,
       name: '',
