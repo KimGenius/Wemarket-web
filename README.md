@@ -19,6 +19,10 @@
 - 변경된 appIntro 수정
 - 변경된 로그인 수정중 (회원가입 버튼 제작해야됨)
 
+### 2018-10-12
+- hide Details  Expected Boolean, got String. 해결 (값 자체를 넘기려면 : 붙이기?)
+
+
 ## Project setup
 ```
 npm install
