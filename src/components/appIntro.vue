@@ -1,6 +1,6 @@
 <template>
     <div class="app-intro">
-        <p class="app-title">{{ appName }}</p>
+        <img src="../../src/assets/logo.png" class="app-title"/>
         <p class="photo-copyright">Photo by Pixzolo Photography on Unsplash</p>
     </div>
 </template>
@@ -26,8 +26,6 @@
 
     .app-title {
         position: absolute;
-        width: 100%;
-        height: 6vh;
         vertical-align: middle;
         line-height: 6vh;
         font-size: 20px;
@@ -36,7 +34,8 @@
         margin-bottom: 0px;
         z-index: 1;
         color: #ffffff;
-        text-align: center;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .photo-copyright {
