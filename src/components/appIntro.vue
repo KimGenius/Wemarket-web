@@ -1,7 +1,7 @@
 <template>
     <div class="app-intro">
-        <img src="../../src/assets/logo.png" class="app-title"/>
-        <p class="photo-copyright">Photo by Pixzolo Photography on Unsplash</p>
+        <img src="../../src/assets/logo.png" alt="logo" class="app-logo"/>
+        <p class="app-text" v-html="appTitle"></p>
     </div>
 </template>
 
@@ -9,7 +9,7 @@
   export default {
     name: "appIntro",
     props: {
-      appName: String
+      appTitle: String
     }
   }
 </script>
@@ -18,32 +18,29 @@
     .app-intro {
         position: relative;
         width: 100vw;
-        height: 70.4vh;
-        background-image: url("../assets/pixzolo-photography-699069-unsplash.png");
-        -webkit-background-size: cover;
-        background-size: cover;
+        height: 65.4vh;
+        background-color: #ff9922;
+        border-bottom: 1px solid #ff9922;
     }
 
-    .app-title {
+    .app-logo {
         position: absolute;
-        vertical-align: middle;
-        line-height: 6vh;
-        font-size: 20px;
-        font-weight: bold;
         margin-top: 1vh;
-        margin-bottom: 0px;
-        z-index: 1;
-        color: #ffffff;
         left: 50%;
         transform: translateX(-50%);
     }
 
-    .photo-copyright {
-        text-align: center;
-        width: 100%;
-        position: absolute;
-        bottom: 0;
+    .app-text {
+        font-family: SeoulNamsanEB;
+        font-size: 14.5vh;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1;
+        letter-spacing: normal;
+        text-align: left;
         color: #ffffff;
-        opacity: .74;
+        padding-top: 7.6vh;
+        padding-left: 4.4vw;
     }
 </style>
