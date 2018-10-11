@@ -14,6 +14,9 @@
 - 라우팅 작업
 - NotFound 기초 작업
 
+### 2018-10-11
+- 로고 적용
+
 ## Project setup
 ```
 npm install
