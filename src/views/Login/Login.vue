@@ -1,22 +1,25 @@
 <template>
     <div class='main'>
-        <app-intro app-name='위마켓' />
+        <app-intro app-title='We<br>Market<br>당신을<br>위한' />
         <div class='login-wrap'>
             <v-form v-model='valid'>
                 <v-flex xs12 sm6 md3>
                     <v-text-field
+                            hide-details=true
                             class='login-input'
                             label='Solo'
                             placeholder='아이디'
                             solo
                     ></v-text-field>
                     <v-text-field
+                            hide-details=true
                             class='login-input'
                             label='Solo'
                             placeholder='패스워드'
                             solo
                     ></v-text-field>
                     <v-btn class='login-input login-submit'>로그인</v-btn>
+                    <!-- TODO : 회원가입 작업 해야됨-->
                     <router-link to="/waitjoin" class='login-join'>아직 계정이 없으신가요? 회원가입</router-link>
                 </v-flex>
             </v-form>

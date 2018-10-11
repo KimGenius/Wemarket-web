@@ -1,20 +1,21 @@
 .login-wrap {
   position: relative;
   width: 100vw;
-  height: 29.6vh;
+  height: 34.6vh;
   background-color: #ff9922;
   padding-top: 2.2vh;
   padding-left: 4.4vw; }
 
 .login-input {
   width: 91.1vw;
-  height: 46px !important;
-  margin-bottom: 6px !important;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16); }
 
 .v-input__slot,
+.v-input__control,
 .v-btn {
-  border-radius: 5px !important; }
+  height: 8vh !important;
+  margin-bottom: 2px !important;
+  border-radius: 0px !important; }
 
 .login-submit {
   font-weight: bold;
