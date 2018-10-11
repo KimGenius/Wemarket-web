@@ -19,8 +19,7 @@
                             solo
                     ></v-text-field>
                     <v-btn class='login-input login-submit'>로그인</v-btn>
-                    <!-- TODO : 회원가입 작업 해야됨-->
-                    <router-link to="/waitjoin" class='login-join'>아직 계정이 없으신가요? 회원가입</router-link>
+                    <router-link to="/waitjoin" class='login-join'>회원가입</router-link>
                 </v-flex>
             </v-form>
         </div>

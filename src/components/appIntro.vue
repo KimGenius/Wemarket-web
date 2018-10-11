@@ -20,12 +20,11 @@
         width: 100vw;
         height: 65.4vh;
         background-color: #ff9922;
-        border-bottom: 1px solid #ff9922;
     }
 
     .app-logo {
         position: absolute;
-        margin-top: 1vh;
+        margin-top: 1.8vh;
         left: 50%;
         transform: translateX(-50%);
     }
