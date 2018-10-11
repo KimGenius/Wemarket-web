@@ -21,7 +21,8 @@
 
 ### 2018-10-12
 - hide Details  Expected Boolean, got String. 해결 (값 자체를 넘기려면 : 붙이기?)
-
+- 변경된 로그인 수정중 (세로 크기 넘어가는 것 해결 해야됨)
+- 회원가입 절단 부분 작업 (크기 조절필요)
 
 ## Project setup
 ```
