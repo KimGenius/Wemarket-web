@@ -1,9 +1,8 @@
 .login-wrap {
   position: relative;
   width: 100vw;
-  height: 34.6vh;
+  height: 35.2vh;
   background-color: #ff9922;
-  padding-top: 2.2vh;
   padding-left: 4.4vw; }
 
 .login-input {
@@ -48,10 +47,9 @@
 .login-join:before {
   content: '';
   position: absolute;
-  top: 0;
   left: 0;
-  border-top: 80px solid #fff;
-  border-right: 80px solid transparent;
+  border-top: 4.4vw solid #ff9922;
+  border-right: 4.4vw solid transparent;
   width: 0; }
 
 /*# sourceMappingURL=login.css.map */
