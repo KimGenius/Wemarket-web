@@ -8,6 +8,7 @@
                             :hideDetails=true
                             class='login-input'
                             label='아이디'
+                            color='#ff9922'
                             box
                     ></v-text-field>
                     <v-text-field
