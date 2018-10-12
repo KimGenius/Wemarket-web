@@ -7,15 +7,13 @@
                     <v-text-field
                             :hideDetails=true
                             class='login-input'
-                            label='Solo'
-                            placeholder='아이디'
-                            solo
+                            label='아이디'
+                            box
                     ></v-text-field>
                     <v-text-field
                             :hideDetails=true
                             class='login-input'
-                            label='Solo'
-                            placeholder='패스워드'
+                            label='패스워드'
                             solo
                     ></v-text-field>
                     <v-btn class='login-input login-submit'>로그인</v-btn>
