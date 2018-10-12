@@ -1,19 +1,19 @@
 .login-wrap {
   position: relative;
   width: 100vw;
-  height: 35.2vh;
+  height: 36.5vh;
   background-color: #ff9922;
   padding-left: 4.4vw; }
 
 .login-input {
   width: 91.1vw;
+  margin-bottom: .3vh !important;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16); }
 
 .v-input__slot,
 .v-input__control,
 .v-btn {
   height: 7.8vh !important;
-  margin-bottom: .3vh !important;
   border-radius: 0px !important; }
 
 .login-submit {
@@ -42,7 +42,9 @@
   color: rgba(0, 0, 0, 0.6);
   cursor: pointer;
   vertical-align: middle;
-  line-height: 7.8vh; }
+  line-height: 7.8vh;
+  position: absolute;
+  bottom: 0; }
 
 .login-join:before {
   content: '';

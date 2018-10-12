@@ -18,7 +18,7 @@
     .app-intro {
         position: relative;
         width: 100vw;
-        height: 64.8vh;
+        height: 63.5vh;
         background-color: #ff9922;
     }
 
@@ -31,7 +31,7 @@
 
     .app-text {
         font-family: SeoulNamsanEB;
-        font-size: 14.5vh;
+        font-size: 13.5vh;
         font-weight: normal;
         font-style: normal;
         font-stretch: normal;
