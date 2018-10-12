@@ -28,6 +28,8 @@
 - 해상도 조절 및 여백 수정
 - 로그인 아이디 입력 부분 box 속성 커스텀
 - 로그인 input type 설정
+- 아이디 입력 Label color 설정
+- 404 NotFound 페이지 작업
 
 ## Project setup
 ```
