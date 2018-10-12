@@ -18,7 +18,7 @@
     .app-intro {
         position: relative;
         width: 100vw;
-        height: 64.8ㅅvh;
+        height: 64.8vh;
         background-color: #ff9922;
     }
 
