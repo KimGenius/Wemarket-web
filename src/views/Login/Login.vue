@@ -15,6 +15,7 @@
                             class='login-input'
                             label='패스워드'
                             solo
+                            type='password'
                     ></v-text-field>
                     <v-btn class='login-input login-submit'>로그인</v-btn>
                     <router-link to="/waitjoin" class='login-join'>회원가입</router-link>
