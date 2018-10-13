@@ -31,6 +31,9 @@
 - 아이디 입력 Label color 설정
 - 404 NotFound 페이지 작업
 
+### 2018-10-13
+- 회원가입 컴포넌트화
+
 ## Project setup
 ```
 npm install
