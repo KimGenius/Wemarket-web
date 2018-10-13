@@ -19,7 +19,7 @@
                             type='password'
                     ></v-text-field>
                     <v-btn class='login-input login-submit'>로그인</v-btn>
-                    <router-link to="/waitjoin" class='login-join'>회원가입</router-link>
+                    <WaitJoin></WaitJoin>
                 </v-flex>
             </v-form>
         </div>
@@ -28,11 +28,12 @@
 
 <script>
   import AppIntro from '../../components/appIntro'
+  import WaitJoin from '../../components/waitjoin'
   import './login.scss'
 
   export default {
     name: 'Login',
-    components: {AppIntro},
+    components: {AppIntro, WaitJoin},
     data: () => ({
       valid: false,
       name: '',
