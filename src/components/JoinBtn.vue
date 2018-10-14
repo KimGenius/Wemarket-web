@@ -10,6 +10,7 @@
     },
     computed: {
       style() {
+        // TODO: before는 어떻게 처리하징
         return 'border-top: 4.4vw solid ' + this.backgroundColor
       }
     }
