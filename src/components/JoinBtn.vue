@@ -1,10 +1,18 @@
 <template>
-    <router-link to="/waitjoin" class='login-join'>회원가입</router-link>
+    <router-link :style='style' to='/waitjoin' class='login-join'>회원가입</router-link>
 </template>
 
 <script>
   export default {
-    name: "waitjoin"
+    name: 'waitjoin',
+    props: {
+      backgroundColor: String
+    },
+    computed: {
+      style() {
+        return 'border-top: 4.4vw solid ' + this.backgroundColor
+      }
+    }
   }
 </script>
 
