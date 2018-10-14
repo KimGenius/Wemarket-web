@@ -1,23 +1,31 @@
 .wait-join-wrap {
   position: relative;
   width: 100vw;
-  height: 29.6vh;
-  background-color: #ff9922;
+  height: 36.5vh;
   padding-top: 2.2vh;
-  padding-left: 4.4vw; }
+  padding-left: 4.4vw;
+  background-color: #12a1fa; }
+
+.wait-join-text {
+  position: relative;
+  width: 91.1vw;
+  height: 15.4vh;
+  background-color: #ffffff;
+  color: rgba(0, 0, 0, 0.6);
+  font-family: SeoulNamsanB;
+  font-size: 3.5vw;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 15.4vh;
+  margin-bottom: 1.4vh; }
 
 .wait-join-logout {
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16) !important;
+  background-color: #81cfff !important;
   width: 91.1vw;
-  display: block;
-  margin-top: 10px;
-  font-size: 13px;
-  font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.15;
-  letter-spacing: normal;
-  text-align: center;
-  color: #ffffff;
-  cursor: pointer; }
+  height: 7.8vh;
+  font-size: 18px;
+  color: #ffffff !important;
+  margin: 0; }
 
 /*# sourceMappingURL=waitJoin.css.map */

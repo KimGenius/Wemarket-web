@@ -1,20 +1,26 @@
 <template>
     <div class='main'>
-        <app-intro app-name='위마켓' />
+        <app-intro app-title='가입승인<br>
+대기중<br>
+계정<br>
+입니다'
+        background-color='#12a1fa'/>
         <div class='wait-join-wrap'>
-            <p class='wait-join-text'>해당 계정은 가입 승인 대기중입니다</p>
-            <router-link to="/login" class='wait-join-logout'>다른 계정으로 로그인 해 볼까요? 로그아웃</router-link>
+            <p class='wait-join-text'>빠른 시일 내에 연락 드리겠습니다</p>
+            <v-btn class='wait-join-logout'>로그아웃</v-btn>
+            <JoinBtn background-color='#12a1fa'></JoinBtn>
         </div>
     </div>
 </template>
 
 <script>
   import AppIntro from '../../components/appIntro';
+  import JoinBtn from '../../components/JoinBtn';
   import './waitJoin.scss';
 
   export default {
     name: 'Login',
-    components: {AppIntro},
+    components: {AppIntro, JoinBtn},
     data: () => ({
     })
   }
