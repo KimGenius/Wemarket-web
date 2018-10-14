@@ -19,7 +19,7 @@
                             type='password'
                     ></v-text-field>
                     <v-btn class='login-input login-submit'>로그인</v-btn>
-                    <WaitJoin></WaitJoin>
+                    <JoinBtn></JoinBtn>
                 </v-flex>
             </v-form>
         </div>
@@ -28,12 +28,12 @@
 
 <script>
   import AppIntro from '../../components/appIntro'
-  import WaitJoin from '../../components/waitjoin'
+  import JoinBtn from '../../components/JoinBtn'
   import './login.scss'
 
   export default {
     name: 'Login',
-    components: {AppIntro, WaitJoin},
+    components: {AppIntro, JoinBtn},
     data: () => ({
       valid: false,
       name: '',
