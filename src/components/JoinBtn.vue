@@ -10,8 +10,9 @@
     },
     computed: {
       style() {
-        // TODO: before는 어떻게 처리하징
-        // return 'border-top: 4.4vw solid ' + this.backgroundColor
+        return {
+          '--background-color': this.backgroundColor || '#ff9922'
+        }
       }
     }
   }
@@ -42,7 +43,7 @@
         content: '';
         position: absolute;
         left: 0;
-        border-top: 4.4vw solid #ff9922;
+        border-top: 4.4vw solid var(--background-color);
         border-right: 4.4vw solid transparent;
         width: 0;
     }
