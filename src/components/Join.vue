@@ -1,5 +1,8 @@
 <template>
-    <router-link :style='style' to='/waitjoin' class='login-join'>회원가입</router-link>
+    <!--TODO: 가려지는 부분 hidden 처리 해야됨-->
+    <div class='join-wrap' :style='wrapStyle'>
+        <p v-on:click='toggleJoin' :style='style' class='join-toggle-btn'>회원가입</p>
+    </div>
 </template>
 
 <script>
@@ -13,16 +16,40 @@
         return {
           '--background-color': this.backgroundColor || '#ff9922'
         }
+      },
+      wrapStyle() {
+        return {
+          top: this.isJoin ? '6.2vh' : '92.2vh'
+        }
+      }
+    },
+    data: () => ({
+      isJoin: false
+    }),
+    methods: {
+      toggleJoin: function () {
+        this.isJoin = !this.isJoin
       }
     }
   }
 </script>
 
 <style scoped>
-    .login-join {
+    .join-wrap {
+        position: absolute;
+        width: 100vw;
+        height: 93.8vh;
+        background-color: #ffffff;
+        -webkit-transition: all .5s;
+        -moz-transition: all .5s;
+        -ms-transition: all .5s;
+        -o-transition: all .5s;
+        transition: all .5s;
+    }
+
+    .join-toggle-btn {
         background-color: #ffffff;
         width: 100vw;
-        margin-left: -4.4vw !important;
         height: 7.8vh;
         font-size: 13px;
         display: block;
@@ -36,10 +63,12 @@
         vertical-align: middle;
         line-height: 7.8vh;
         position: absolute;
-        bottom: 0;
+        margin-bottom: 0;
+        top: 0;
+        cursor: pointer;
     }
 
-    .login-join:before {
+    .join-toggle-btn:before {
         content: '';
         position: absolute;
         left: 0;

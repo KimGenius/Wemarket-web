@@ -19,10 +19,10 @@
                             type='password'
                     ></v-text-field>
                     <v-btn class='login-input login-submit'>로그인</v-btn>
-                    <Join></Join>
                 </v-flex>
             </v-form>
         </div>
+        <Join></Join>
     </div>
 </template>
 
