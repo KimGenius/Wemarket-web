@@ -41,6 +41,10 @@
 ### 2018-10-15
 - 컴포넌트들 동적 컬러 적용 before 해결
 
+### 2018-10-16
+- Join 컴포넌트 클릭시 애니메이션 처리
+- Join 컴포넌트 Todo 추가
+
 ## Project setup
 ```
 npm install
