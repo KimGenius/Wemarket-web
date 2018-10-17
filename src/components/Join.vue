@@ -1,7 +1,8 @@
 <template>
-    <!--TODO: 가려지는 부분 hidden 처리 해야됨-->
-    <div class='join-wrap' :style='wrapStyle'>
-        <p v-on:click='toggleJoin' :style='style' class='join-toggle-btn'>회원가입</p>
+    <div class='join-hide' :style='wrapStyle'>
+        <div class="join-wrap">
+            <p v-on:click='toggleJoin' :style='style' class='join-toggle-btn'>회원가입</p>
+        </div>
     </div>
 </template>
 
@@ -19,7 +20,8 @@
       },
       wrapStyle() {
         return {
-          top: this.isJoin ? '6.2vh' : '92.2vh'
+          top: this.isJoin ? '6.2vh' : '92.2vh',
+          height: this.isJoin ? '93.8vh' : '7.8vh'
         }
       }
     },
@@ -35,16 +37,22 @@
 </script>
 
 <style scoped>
-    .join-wrap {
+    .join-hide {
         position: absolute;
+        overflow: hidden;
         width: 100vw;
-        height: 93.8vh;
         background-color: #ffffff;
         -webkit-transition: all .5s;
         -moz-transition: all .5s;
         -ms-transition: all .5s;
         -o-transition: all .5s;
         transition: all .5s;
+    }
+
+    .join-wrap {
+        position: relative;
+        width: 100vw;
+        height: 92.2vh;
     }
 
     .join-toggle-btn {
