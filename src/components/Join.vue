@@ -1,12 +1,24 @@
 <template>
     <div class='join-hide' :style='wrapStyle'>
         <div class="join-wrap">
-            <p v-on:click='toggleJoin' :style='style' class='join-toggle-btn'>회원가입</p>
+            <v-form>
+                <p v-on:click='toggleJoin' :style='style' class='join-toggle-btn'>회원가입</p>
+                <v-flex xs12 sm6 md3>
+                    <v-text-field
+                            hide-details
+                            class='join-input'
+                            label='아이디'
+                            color='#ff9922'
+                            box
+                    ></v-text-field>
+                </v-flex>
+            </v-form>
         </div>
     </div>
 </template>
 
 <script>
+  import './join.scss'
   export default {
     name: 'waitjoin',
     props: {
@@ -35,53 +47,3 @@
     }
   }
 </script>
-
-<style scoped>
-    .join-hide {
-        position: absolute;
-        overflow: hidden;
-        width: 100vw;
-        background-color: #ffffff;
-        -webkit-transition: all .5s;
-        -moz-transition: all .5s;
-        -ms-transition: all .5s;
-        -o-transition: all .5s;
-        transition: all .5s;
-    }
-
-    .join-wrap {
-        position: relative;
-        width: 100vw;
-        height: 92.2vh;
-    }
-
-    .join-toggle-btn {
-        background-color: #ffffff;
-        width: 100vw;
-        height: 7.8vh;
-        font-size: 13px;
-        display: block;
-        font-weight: bold;
-        font-style: normal;
-        font-stretch: normal;
-        letter-spacing: normal;
-        text-align: center;
-        color: rgba(0, 0, 0, .6);
-        cursor: pointer;
-        vertical-align: middle;
-        line-height: 7.8vh;
-        position: absolute;
-        margin-bottom: 0;
-        top: 0;
-        cursor: pointer;
-    }
-
-    .join-toggle-btn:before {
-        content: '';
-        position: absolute;
-        left: 0;
-        border-top: 4.4vw solid var(--background-color);
-        border-right: 4.4vw solid transparent;
-        width: 0;
-    }
-</style>
