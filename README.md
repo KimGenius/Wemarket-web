@@ -47,6 +47,7 @@
 
 ### 2018-10-17
 - Join 컴포넌트 TODO 해결 (commit 참조)
+- Join 컴포넌트 input 틀 제작 (각 v css 수정 시 컴포넌트 최상위 클래스 앞에 붙여주기)
 
 ## Project setup
 ```
