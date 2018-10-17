@@ -10,18 +10,16 @@
   margin-bottom: .3vh !important;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16); }
 
-.theme--light.v-text-field--box .v-input__slot {
+.login-wrap .v-input__slot {
   background-color: #ffffff !important; }
 
-.v-text-field__slot {
+.login-wrap .v-text-field > .v-input__control > .v-input__slot:after,
+.login-wrap .v-text-field > .v-input__control > .v-input__slot:before {
   content: none !important; }
 
-.v-text-field > .v-input__control > .v-input__slot:after {
-  border: none !important; }
-
-.v-input__slot,
-.v-input__control,
-.v-btn {
+.login-wrap .v-input__slot,
+.login-wrap .v-input__control,
+.login-wrap .v-btn {
   height: 7.8vh !important;
   border-radius: 0px !important; }
 

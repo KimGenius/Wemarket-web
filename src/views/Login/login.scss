@@ -16,23 +16,20 @@ $main-color: #ff9922;
 }
 
 //아이디 입력 부분 box 속성 커스텀 시작
-.theme--light.v-text-field--box .v-input__slot {
+.login-wrap .v-input__slot {
   background-color: #ffffff !important;
 }
 
-.v-text-field__slot {
+.login-wrap .v-text-field > .v-input__control > .v-input__slot:after,
+.login-wrap .v-text-field > .v-input__control > .v-input__slot:before {
   content: none !important;
-}
-
-.v-text-field > .v-input__control > .v-input__slot:after {
-  border: none !important;
 }
 
 //아이디 입력 부분 box 속성 커스텀 끝
 
-.v-input__slot,
-.v-input__control,
-.v-btn {
+.login-wrap .v-input__slot,
+.login-wrap .v-input__control,
+.login-wrap .v-btn {
   height: 7.8vh !important;
   border-radius: $input-border-radius !important;
 }
