@@ -45,6 +45,9 @@
 - Join 컴포넌트 클릭시 애니메이션 처리
 - Join 컴포넌트 Todo 추가
 
+### 2018-10-17
+- Join 컴포넌트 TODO 해결 (commit 참조)
+
 ## Project setup
 ```
 npm install
