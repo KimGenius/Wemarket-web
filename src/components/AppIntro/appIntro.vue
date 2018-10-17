@@ -1,11 +1,13 @@
 <template>
     <div class="app-intro" :style='style'>
-        <img src="../../src/assets/logo.png" alt="logo" class="app-logo"/>
+        <img src="../../../src/assets/logo.png" alt="logo" class="app-logo"/>
         <p class="app-text" v-html="appTitle"></p>
     </div>
 </template>
 
 <script>
+  import './appIntro.scss'
+
   export default {
     name: "appIntro",
     props: {
@@ -13,12 +15,9 @@
       backgroundColor: String
     },
     computed: {
-      style () {
+      style() {
         return 'background-color: ' + this.backgroundColor
       }
     }
   }
 </script>
-
-<style scoped>
-</style>

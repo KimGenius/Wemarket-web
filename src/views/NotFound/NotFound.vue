@@ -8,7 +8,7 @@
 </template>
 
 <script>
-  import AppIntro from '../../components/appIntro'
+  import AppIntro from '../../components/AppIntro'
 
   export default {
     name: "NotFound",
