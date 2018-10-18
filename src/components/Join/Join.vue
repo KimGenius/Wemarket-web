@@ -91,7 +91,7 @@
                     ></v-text-field>
                 </v-flex>
                 <v-flex>
-                    <v-btn class='join-input join-submit'>로그인</v-btn>
+                    <v-btn class='join-input join-submit'>회원가입</v-btn>
                 </v-flex>
             </v-form>
         </div>
