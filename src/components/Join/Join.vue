@@ -1,6 +1,6 @@
 <template>
-    <div class='join-hide' :style='wrapStyle'>
-        <div class="join-wrap">
+    <div class='join-hide' :style='hideStyle'>
+        <div class="join-wrap" :style='wrapStyle'>
             <v-form>
                 <p v-on:click='toggleJoin' :style='style' class='join-toggle-btn'>회원가입</p>
                 <v-flex xs12 sm6 md3>
@@ -11,6 +11,87 @@
                             color='#ff9922'
                             box
                     ></v-text-field>
+                    <v-text-field
+                            hide-details
+                            class='join-input'
+                            label='비밀번호'
+                            color='#ff9922'
+                            box
+                            type='password'
+                    ></v-text-field>
+                    <v-text-field
+                            hide-details
+                            class='join-input'
+                            label='비밀번호 확인'
+                            color='#ff9922'
+                            box
+                            type='password'
+                    ></v-text-field>
+                </v-flex>
+                <p class='join-toggle-btn'>점포정보</p>
+                <v-flex xs12 sm6 md3>
+                    <v-text-field
+                            hide-details
+                            class='join-input'
+                            label='점포명'
+                            color='#ff9922'
+                            box
+                    ></v-text-field>
+                    <v-text-field
+                            hide-details
+                            class='join-input'
+                            label='업종'
+                            color='#ff9922'
+                            box
+                    ></v-text-field>
+                    <v-text-field
+                            hide-details
+                            class='join-input'
+                            label='점포 설명'
+                            color='#ff9922'
+                            box
+                    ></v-text-field>
+                </v-flex>
+                <p class='join-toggle-btn'>사업자 정보</p>
+                <v-flex xs12 sm6 md3>
+                    <v-text-field
+                            hide-details
+                            class='join-input'
+                            label='사업자명'
+                            color='#ff9922'
+                            box
+                    ></v-text-field>
+                    <v-text-field
+                            hide-details
+                            class='join-input'
+                            label='사업자등록번호'
+                            color='#ff9922'
+                            box
+                    ></v-text-field>
+                    <v-text-field
+                            hide-details
+                            class='join-input'
+                            label='전화번호'
+                            color='#ff9922'
+                            box
+                    ></v-text-field>
+                    <v-text-field
+                            hide-details
+                            class='join-input'
+                            label='은행선택'
+                            color='#ff9922'
+                            box
+                    ></v-text-field>
+                    <v-text-field
+                            hide-details
+                            class='join-input'
+                            label='계좌번호'
+                            color='#ff9922'
+                            box
+                    ></v-text-field>
+                </v-flex>
+                <v-flex>
+                    <v-btn class='join-input join-submit'>로그인</v-btn>
                 </v-flex>
             </v-form>
         </div>
@@ -30,10 +111,15 @@
           '--background-color': this.backgroundColor || '#ff9922'
         }
       },
-      wrapStyle() {
+      hideStyle() {
         return {
           top: this.isJoin ? '6.2vh' : '92.2vh',
           height: this.isJoin ? '93.8vh' : '7.8vh'
+        }
+      },
+      wrapStyle() {
+        return {
+          overflow: this.isJoin ? 'scroll' : 'hidden'
         }
       }
     },
