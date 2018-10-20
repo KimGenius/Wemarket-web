@@ -1,10 +1,12 @@
+$main-color: #f4f4f4;
+
 .wait-join-wrap {
   position: relative;
   width: 100vw;
   height: 36.5vh;
   padding-top: 2.2vh;
   padding-left: 4.4vw;
-  background-color: #12a1fa;
+  background-color: $main-color;
 }
 
 .wait-join-text {

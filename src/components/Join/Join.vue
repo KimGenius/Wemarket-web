@@ -1,8 +1,9 @@
 <template>
+    <!--TODO: border했을때 background 변경해야됨-->
     <div class='join-hide' :style='hideStyle'>
         <div class="join-wrap" :style='wrapStyle'>
             <v-form>
-                <p v-on:click='toggleJoin' :style='style' class='join-toggle-btn'>회원가입</p>
+                <p v-on:click='toggleJoin' :style='style' class='join-toggle-btn join-wrap-title'>회원가입</p>
                 <v-flex xs12 sm6 md3>
                     <v-text-field
                             hide-details
@@ -28,7 +29,7 @@
                             type='password'
                     ></v-text-field>
                 </v-flex>
-                <p class='join-toggle-btn'>점포정보</p>
+                <p class='join-toggle-btn join-input-title'>점포정보</p>
                 <v-flex xs12 sm6 md3>
                     <v-text-field
                             hide-details
@@ -52,7 +53,7 @@
                             box
                     ></v-text-field>
                 </v-flex>
-                <p class='join-toggle-btn'>사업자 정보</p>
+                <p class='join-toggle-btn join-input-title'>사업자 정보</p>
                 <v-flex xs12 sm6 md3>
                     <v-text-field
                             hide-details

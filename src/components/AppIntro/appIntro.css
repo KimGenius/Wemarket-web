@@ -2,7 +2,7 @@
   position: relative;
   width: 100vw;
   height: 63.5vh;
-  background-color: #ff9922; }
+  background-color: #f4f4f4; }
 
 .app-logo {
   position: absolute;
@@ -19,8 +19,8 @@
   line-height: 1;
   letter-spacing: normal;
   text-align: left;
-  color: #ffffff;
   padding-top: 7.6vh;
-  padding-left: 4.4vw; }
+  padding-left: 4.4vw;
+  color: #ff9922; }
 
 /*# sourceMappingURL=appIntro.css.map */

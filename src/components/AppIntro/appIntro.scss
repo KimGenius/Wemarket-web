@@ -1,8 +1,11 @@
+$main-color: #f4f4f4;
+$text-color: #ff9922;
+
 .app-intro {
   position: relative;
   width: 100vw;
   height: 63.5vh;
-  background-color: #ff9922;
+  background-color: $main-color;
 }
 
 .app-logo {
@@ -21,7 +24,7 @@
   line-height: 1;
   letter-spacing: normal;
   text-align: left;
-  color: #ffffff;
   padding-top: 7.6vh;
   padding-left: 4.4vw;
+  color: $text-color;
 }

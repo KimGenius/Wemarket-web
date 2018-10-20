@@ -1,3 +1,5 @@
+$input-border-radius: 5px;
+
 .join-hide {
   position: absolute;
   overflow: hidden;
@@ -19,6 +21,11 @@
   overflow: hidden;
 }
 
+.join-wrap-title {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
 .join-toggle-btn {
   background-color: #ffffff;
   width: 100vw;
@@ -37,17 +44,30 @@
   position: relative;
   margin-bottom: 0;
   top: 0;
-  cursor: pointer;
+  box-shadow: 0 -3px 6px 0 rgba(0, 0, 0, 0.16);
 }
 
-.join-toggle-btn:before {
-  content: '';
-  position: absolute;
-  left: 0;
-  border-top: 4.4vw solid var(--background-color);
-  border-right: 4.4vw solid transparent;
-  width: 0;
+.join-input-title {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }
+
+.join-wrap .v-input__slot,
+.join-wrap .v-input__control,
+.join-wrap .v-btn {
+  border-top-left-radius: $input-border-radius !important;
+  border-top-right-radius: $input-border-radius !important;
+}
+
+//.join-toggle-btn:before {
+//  content: '';
+//  position: absolute;
+//  left: 0;
+//  border-top: 4.4vw solid var(--background-color);
+//  border-right: 4.4vw solid transparent;
+//  width: 0;
+//}
 
 .join-input {
   width: 91.1vw;
