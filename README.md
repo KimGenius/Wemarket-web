@@ -57,6 +57,9 @@
 ### 2018-10-20
 - 컴포넌트들 바뀐 디자인으로 수정중
 
+### 2018-10-21
+- Join Wrap Height 수정
+
 ## Project setup
 ```
 npm install
