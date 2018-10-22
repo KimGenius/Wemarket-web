@@ -4,12 +4,6 @@
   height: 63.5vh;
   background-color: #f4f4f4; }
 
-.app-logo {
-  position: absolute;
-  margin-top: 1.8vh;
-  left: 50%;
-  transform: translateX(-50%); }
-
 .app-text {
   font-family: SeoulNamsanEB;
   font-size: 13.5vh;

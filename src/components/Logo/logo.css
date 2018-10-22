@@ -1,0 +1,15 @@
+svg {
+  position: absolute;
+  margin-top: 1.8vh;
+  width: 8.9vw;
+  height: 4.4vh;
+  left: 50%;
+  transform: translateX(-50%); }
+
+.cls-1 {
+  fill: none; }
+
+.cls-2 {
+  fill: #ff9922; }
+
+/*# sourceMappingURL=logo.css.map */
