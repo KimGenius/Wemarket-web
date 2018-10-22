@@ -60,6 +60,9 @@
 ### 2018-10-21
 - Join Wrap Height 수정
 
+### 2018-10-22
+- 로고 컴포넌트화
+
 ## Project setup
 ```
 npm install
