@@ -78,7 +78,8 @@
 ### 2018-10-30
 - app-intro 동적 컬러 적용
 - 회원가입 radius 수정
-
+- 회원가입 클릭 시 로고 색 변경하게 event #emit 적용
+- waitjoin 회원가입 깨지던 문제 수정
 
 ## Project setup
 ```
