@@ -1,9 +1,9 @@
 <template>
-    <div class="app-intro" :style='style'>
+    <div class="app-intro">
         <!--TODO: 로고가 색이 바껴야됨-->
-        <Logo></Logo>
+        <Logo v-bind:app-color="appColor"></Logo>
         <!--TODO: 글자도 색이 바껴야됨-->
-        <p class="app-text" v-html="appTitle"></p>
+        <p class="app-text" :style="style" v-html="appTitle"></p>
     </div>
 </template>
 
@@ -16,11 +16,11 @@
     components: {Logo},
     props: {
       appTitle: String,
-      backgroundColor: String
+      appColor: String
     },
     computed: {
       style() {
-        return 'background-color: ' + this.backgroundColor
+        return 'color: ' + this.appColor
       }
     }
   }
