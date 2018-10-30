@@ -1,8 +1,6 @@
 <template>
     <div class="app-intro">
-        <!--TODO: 로고가 색이 바껴야됨-->
-        <Logo v-bind:app-color="appColor"></Logo>
-        <!--TODO: 글자도 색이 바껴야됨-->
+        <Logo :app-color="appColor"></Logo>
         <p class="app-text" :style="style" v-html="appTitle"></p>
     </div>
 </template>

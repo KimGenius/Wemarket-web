@@ -18,8 +18,8 @@
   overflow: hidden; }
 
 .join-wrap-title {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px; }
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px; }
 
 .join-toggle-btn {
   background-color: #ffffff;
