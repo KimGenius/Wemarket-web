@@ -1,6 +1,6 @@
 <template>
     <div class='main'>
-        <app-intro app-title='We<br>Market<br>당신을<br>위한'/>
+        <app-intro app-title='We<br>Market<br>당신을<br>위한' app-color="#ffa945" :logo-color="color" />
         <div class='login-wrap'>
             <v-form v-model='valid'>
                 <v-flex xs12 sm6 md3>
@@ -22,11 +22,13 @@
                 </v-flex>
             </v-form>
         </div>
-        <Join></Join>
+        <Join v-on:change-color="changeColor"></Join>
     </div>
 </template>
 
 <script>
+  /* eslint-disable no-console */
+
   import AppIntro from '../../components/AppIntro'
   import Join from '../../components/Join'
   import './login.scss'
@@ -45,7 +47,13 @@
       emailRules: [
         v => !!v || 'E-mail is required',
         v => /.+@.+/.test(v) || 'E-mail must be valid'
-      ]
-    })
+      ],
+      color: ''
+    }),
+    methods: {
+      changeColor: function () {
+        this.color = this.color === '' ? 'rgba(0, 0, 0, .6)' : ''
+      }
+    }
   }
 </script>

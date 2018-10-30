@@ -1,5 +1,4 @@
 <template>
-    <!--TODO: border했을때 background 변경해야됨-->
     <div class='join-hide' :style='hideStyle'>
         <div class="join-wrap" :style='wrapStyle'>
             <v-form>
@@ -130,6 +129,7 @@
     methods: {
       toggleJoin: function () {
         this.isJoin = !this.isJoin
+        this.$emit('change-color')
       }
     }
   }

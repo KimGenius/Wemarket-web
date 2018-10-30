@@ -75,6 +75,11 @@
 ### 2018-10-26
 - 메인 작업중
 
+### 2018-10-30
+- app-intro 동적 컬러 적용
+- 회원가입 radius 수정
+
+
 ## Project setup
 ```
 npm install

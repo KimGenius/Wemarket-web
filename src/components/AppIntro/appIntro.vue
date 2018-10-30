@@ -1,6 +1,6 @@
 <template>
     <div class="app-intro">
-        <Logo :app-color="appColor"></Logo>
+        <Logo :logo-color="logoColor"></Logo>
         <p class="app-text" :style="style" v-html="appTitle"></p>
     </div>
 </template>
@@ -14,7 +14,8 @@
     components: {Logo},
     props: {
       appTitle: String,
-      appColor: String
+      appColor: String,
+      logoColor: String
     },
     computed: {
       style() {

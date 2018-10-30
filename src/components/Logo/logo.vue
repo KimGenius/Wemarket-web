@@ -28,11 +28,11 @@
   export default {
     name: "logo",
     props: {
-      appColor: String
+      logoColor: String
     },
     computed: {
       style() {
-        return 'fill: ' + this.appColor
+        return 'fill: ' + this.logoColor
       }
     }
   }
