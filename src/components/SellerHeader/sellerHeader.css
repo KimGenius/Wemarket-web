@@ -1,12 +1,14 @@
 .seller-header-wrap {
   position: relative;
   width: 100vw;
-  height: 14.2vh; }
+  height: 14.2vh;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.33);
+  background-color: #fdfdfd; }
 
 .seller-header-top {
   position: relative;
   width: 100vw;
-  height: 7.9vh;
+  height: 8vh;
   padding-left: 4.4vw;
   padding-right: 4.4vw; }
 
@@ -31,5 +33,29 @@
   position: relative;
   float: right;
   padding-top: 2.4vh; }
+
+.seller-header-bottom {
+  position: relative;
+  width: 100vw;
+  height: 6.2vh; }
+
+.seller-header-bottom > div {
+  position: relative;
+  width: 50vw;
+  height: 6.2vh;
+  float: left;
+  font-size: 15px;
+  color: #ff9922;
+  font-weight: bold; }
+
+.seller-header-bottom > div:first-child {
+  border-bottom: 5px solid #ff9922; }
+
+.seller-header-bottom > div > p {
+  margin-bottom: 0;
+  height: 6.2vh;
+  vertical-align: middle;
+  line-height: 6.2vh;
+  text-align: center; }
 
 /*# sourceMappingURL=sellerHeader.css.map */

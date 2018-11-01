@@ -30,6 +30,14 @@
                  class="qr"
                  alt="QR Code">
         </div>
+        <div class="seller-header-bottom">
+            <div class="seller-header-bottom-left">
+                <p>점포관리</p>
+            </div>
+            <div class="seller-header-bottom-right">
+                <p>주문내역</p>
+            </div>
+        </div>
     </div>
 </template>
 
