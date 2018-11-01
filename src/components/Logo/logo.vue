@@ -1,5 +1,5 @@
 <template>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
         <g id="logo" transform="translate(-14 -12)">
             <path id="box" d="M0 0h32v32H0z" class="cls-1" transform="translate(14 12)"></path>
             <g id="logo-2" data-name="logo" transform="translate(15 12.4)">
