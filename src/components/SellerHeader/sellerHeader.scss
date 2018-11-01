@@ -1,0 +1,38 @@
+.seller-header-wrap {
+  position: relative;
+  width: 100vw;
+  height: 14.2vh;
+}
+
+.seller-header-top {
+  position: relative;
+  width: 100vw;
+  height: 7.9vh;
+  padding-left: 4.4vw;
+  padding-right: 4.4vw;
+}
+
+.seller-header-top svg {
+  position: relative;
+  float: left;
+  left: 0;
+  padding-top: 1.7vh;
+  top: 0;
+  width: 8.9vw;
+}
+
+.seller-header-top p {
+  font-size: 20px;
+  float: left;
+  padding-top: 2.5vh;
+  margin-left: 2.8vw;
+  color: #ff9922;
+  font-family: SeoulNamsanEB;
+  font-weight: bold;
+}
+
+.seller-header-top .qr {
+  position: relative;
+  float: right;
+  padding-top: 2.4vh;
+}
