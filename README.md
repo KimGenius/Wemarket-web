@@ -81,6 +81,11 @@
 - 회원가입 클릭 시 로고 색 변경하게 event #emit 적용
 - waitjoin 회원가입 깨지던 문제 수정
 
+### 2018-11-01
+- Seller routing & Seller Header 연동
+- Logo 다른 곳과 스타일겹치지 않게 수정
+- Seller header 작업
+
 ## Project setup
 ```
 npm install
