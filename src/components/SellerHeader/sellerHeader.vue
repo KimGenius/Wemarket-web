@@ -31,10 +31,10 @@
                  alt="QR Code">
         </div>
         <div class="seller-header-bottom">
-            <div class="seller-header-bottom-left">
+            <div v-on:click="onLeft" class="seller-header-bottom-left">
                 <p>점포관리</p>
             </div>
-            <div class="seller-header-bottom-right">
+            <div v-on:click="onRight" class="seller-header-bottom-right">
                 <p>주문내역</p>
             </div>
         </div>
@@ -42,9 +42,24 @@
 </template>
 
 <script>
+  /* eslint-disable no-console */
+
   import './sellerHeader.scss'
 
   export default {
-    name: "sellerHeader"
+    name: "sellerHeader",
+    data: () => ({
+      isLeft: true
+    }),
+    methods: {
+      onLeft: function () {
+        this.isLeft = true
+        console.log(this.isLeft)
+      },
+      onRight: function () {
+        this.isLeft = false
+        console.log(this.isLeft)
+      }
+    }
   }
 </script>
