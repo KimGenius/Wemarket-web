@@ -48,17 +48,12 @@
 
   export default {
     name: "sellerHeader",
-    data: () => ({
-      isLeft: true
-    }),
     methods: {
       onLeft: function () {
-        this.isLeft = true
-        console.log(this.isLeft)
+        this.$emit('on-left')
       },
       onRight: function () {
-        this.isLeft = false
-        console.log(this.isLeft)
+        this.$emit('on-right')
       }
     }
   }

@@ -1,0 +1,25 @@
+.seller-content-wrap {
+  position: relative;
+  width: 100vw;
+  height: 85.8vh;
+  overflow: hidden;
+}
+
+.seller-content-fragment {
+  position: relative;
+  width: 200vw;
+  height: 85.8vh;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -ms-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+}
+
+.seller-content-left,
+.seller-content-right {
+  position: relative;
+  width: 100vw;
+  height: 85.8vh;
+  float: left;
+}
