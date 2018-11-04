@@ -2,7 +2,8 @@
   position: relative;
   width: 100vw;
   height: 85.8vh;
-  overflow: hidden; }
+  overflow: hidden;
+  background-color: #f4f4f4; }
 
 .seller-content-fragment {
   position: relative;
@@ -19,6 +20,8 @@
   position: relative;
   width: 100vw;
   height: 85.8vh;
-  float: left; }
+  float: left;
+  padding-right: 2.2vw;
+  padding-left: 2.2vw; }
 
 /*# sourceMappingURL=sellerContent.css.map */
