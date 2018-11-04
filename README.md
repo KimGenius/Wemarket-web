@@ -86,6 +86,17 @@
 - Logo 다른 곳과 스타일겹치지 않게 수정
 - Seller header 작업
 
+### 2018-11-02
+- Seller Content 작업
+
+### 2018-11-03
+- bottom 바뀌는거 작업중
+
+### 2018-11-04
+- console warn 해결 (없는 :style 적용할려해서)
+- computed css ; 금지 (; 쓰면 적용이 안됨)
+- bottom 바뀌는거 작업 완료
+
 ## Project setup
 ```
 npm install
