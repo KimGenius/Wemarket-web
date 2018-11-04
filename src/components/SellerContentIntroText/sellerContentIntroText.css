@@ -1,0 +1,25 @@
+.seller-content-intro {
+  position: relative;
+  width: 95.6vw;
+  height: 6.7vh;
+  padding-top: 2.2vh;
+  padding-right: 2.2vw;
+  padding-left: 2.2vw; }
+
+.seller-content-intro > p {
+  float: left; }
+
+.seller-content-intro > p:first-child {
+  left: 0;
+  font-size: 20px;
+  font-family: SeoulNamsanEB;
+  color: rgba(0, 0, 0, 0.6); }
+
+.seller-content-intro > p:last-child {
+  float: right;
+  padding-top: .6vh;
+  font-size: 12px;
+  font-family: SeoulNamsanEB;
+  color: #ff9922; }
+
+/*# sourceMappingURL=sellerContentIntroText.css.map */
