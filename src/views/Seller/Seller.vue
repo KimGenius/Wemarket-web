@@ -19,9 +19,11 @@
     methods: {
       onLeft: function () {
         this.isLeft = true
+        console.log('on isLeft: ', this.isLeft)
       },
       onRight: function () {
         this.isLeft = false
+        console.log('on isLeft: ', this.isLeft)
       }
     }
   }
