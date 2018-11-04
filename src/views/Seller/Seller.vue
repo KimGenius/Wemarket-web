@@ -1,6 +1,6 @@
 <template>
     <div>
-        <SellerHeader v-on:on-left="onLeft" v-on:on-right="onRight"></SellerHeader>
+        <SellerHeader :is-left="isLeft" v-on:on-left="onLeft" v-on:on-right="onRight"></SellerHeader>
         <SellerContent :is-left="isLeft"></SellerContent>
     </div>
 </template>

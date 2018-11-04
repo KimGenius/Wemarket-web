@@ -31,10 +31,10 @@
                  alt="QR Code">
         </div>
         <div class="seller-header-bottom">
-            <div v-on:click="onLeft" class="seller-header-bottom-left">
+            <div v-on:click="onLeft" :style="focusLeft" class="seller-header-bottom-left">
                 <p>점포관리</p>
             </div>
-            <div v-on:click="onRight" class="seller-header-bottom-right">
+            <div v-on:click="onRight" :style="focusRight" class="seller-header-bottom-right">
                 <p>주문내역</p>
             </div>
         </div>
@@ -50,10 +50,27 @@
     name: "sellerHeader",
     methods: {
       onLeft: function () {
+        this.isLeft = true
         this.$emit('on-left')
       },
       onRight: function () {
+        this.isLeft = false
         this.$emit('on-right')
+      }
+    },
+    data: () => ({
+      isLeft: Boolean
+    }),
+    computed: {
+      focusLeft() {
+        return {
+          'border-bottom': this.isLeft ? '5px solid #ff9922;' : 'none'
+        }
+      },
+      focusRight() {
+        return {
+          'border-bottom': this.isLeft ? 'none' : '5px solid #ff9922;'
+        }
       }
     }
   }
