@@ -59,7 +59,6 @@
     }),
     methods: {
       onLeft: function () {
-        console.log('left')
         this.leftStyle.borderBottom = '5px solid #ff9922'
         this.rightStyle.borderBottom = 'none'
         this.$emit('on-left')
