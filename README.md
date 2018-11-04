@@ -97,6 +97,12 @@
 - computed css ; 금지 (; 쓰면 적용이 안됨)
 - bottom 바뀌는거 작업 완료
 
+### 2018-11-04
+- header 그림자 가려지는거 수정
+- SellerContentIntroText Component 작업
+- SellerContentIntroBox Component 작업
+- SellerContent Component 적용
+
 ## Project setup
 ```
 npm install
