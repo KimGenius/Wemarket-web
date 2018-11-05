@@ -102,6 +102,7 @@
 - SellerContentIntroText Component 작업
 - SellerContentIntroBox Component 작업
 - SellerContent Component 적용
+- 텍스트 수정
 
 ## Project setup
 ```
