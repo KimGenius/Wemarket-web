@@ -1,8 +1,7 @@
 <template>
     <div class="not-found">
-        <app-intro app-title='404<br>
-없는<br>
-페이지<br>
+        <app-intro app-title='서비스<br>
+준비중<br>
 입니다'/>
     </div>
 </template>
