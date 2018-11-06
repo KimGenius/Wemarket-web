@@ -4,6 +4,8 @@
             <div class="seller-content-left">
                 <SellerContentIntroText/>
                 <SellerContentIntroBox/>
+                <SellerContentMenuText/>
+
             </div>
             <div class="seller-content-right">Right</div>
         </div>
@@ -14,10 +16,11 @@
   import './sellerContent.scss'
   import SellerContentIntroText from '../SellerContentIntroText'
   import SellerContentIntroBox from '../SellerContentIntroBox'
+  import SellerContentMenuText from '../SellerContentMenuText'
 
   export default {
     name: "sellerContent",
-    components: {SellerContentIntroText, SellerContentIntroBox},
+    components: {SellerContentIntroText, SellerContentIntroBox, SellerContentMenuText},
     computed: {
       focusContent() {
         return {
