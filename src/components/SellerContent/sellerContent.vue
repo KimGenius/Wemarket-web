@@ -5,7 +5,7 @@
                 <SellerContentIntroText/>
                 <SellerContentIntroBox/>
                 <SellerContentMenuText/>
-                <SellerMenu/>
+                <SellerMenuList/>
             </div>
             <div class="seller-content-right">Right</div>
         </div>
@@ -17,7 +17,7 @@
   import SellerContentIntroText from '../SellerContentIntroText'
   import SellerContentIntroBox from '../SellerContentIntroBox'
   import SellerContentMenuText from '../SellerContentMenuText'
-  import SellerMenu from '../SellerMenu'
+  import SellerMenuList from '../SellerMenuList'
 
   export default {
     name: "sellerContent",
@@ -25,7 +25,7 @@
       SellerContentIntroText,
       SellerContentIntroBox,
       SellerContentMenuText,
-      SellerMenu
+      SellerMenuList
     },
     computed: {
       focusContent() {

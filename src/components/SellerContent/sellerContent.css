@@ -2,8 +2,9 @@
   position: relative;
   width: 100vw;
   height: 85.8vh;
-  overflow: hidden;
-  background-color: #f4f4f4; }
+  background-color: #f4f4f4;
+  overflow-y: scroll;
+  overflow-x: hidden; }
 
 .seller-content-fragment {
   position: relative;

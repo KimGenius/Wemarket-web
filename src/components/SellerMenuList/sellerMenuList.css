@@ -1,0 +1,13 @@
+.seller-menu-list-wrap {
+  position: relative;
+  width: 95.6vw;
+  min-height: 46.1vh;
+  float: left; }
+
+.seller-menu-list-menu {
+  margin-bottom: 1.1vh; }
+
+.seller-menu-list-menu:nth-child(2n-1) {
+  margin-right: 2.2vw; }
+
+/*# sourceMappingURL=sellerMenuList.css.map */
