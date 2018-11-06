@@ -97,12 +97,18 @@
 - computed css ; 금지 (; 쓰면 적용이 안됨)
 - bottom 바뀌는거 작업 완료
 
-### 2018-11-04
+### 2018-11-05
 - header 그림자 가려지는거 수정
 - SellerContentIntroText Component 작업
 - SellerContentIntroBox Component 작업
 - SellerContent Component 적용
 - 텍스트 수정
+
+### 2018-11-06
+- SellerContentMenuText Component 작업
+- SellerMenu Component 작업
+- SellerMenuList Component 작업
+- SellerMenu 관련 Component 연동
 
 ## Project setup
 ```
