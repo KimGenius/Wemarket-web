@@ -2,7 +2,8 @@
   position: relative;
   width: 95.6vw;
   min-height: 46.1vh;
-  float: left; }
+  float: left;
+  padding-bottom: 7.9vh; }
 
 .seller-menu-list-menu {
   margin-bottom: 1.1vh; }

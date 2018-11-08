@@ -110,6 +110,9 @@
 - SellerMenuList Component 작업
 - SellerMenu 관련 Component 연동
 
+### 2018-11-08
+- 
+
 ## Project setup
 ```
 npm install
