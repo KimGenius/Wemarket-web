@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="order-list-wrap">
         <OrderCard></OrderCard>
         <OrderCard></OrderCard>
     </div>
