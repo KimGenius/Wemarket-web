@@ -114,6 +114,9 @@
 - Partners Component 제작 및 적용
 - Partners Card Component 작업 및 연동
 
+### 2018-11-09
+- OrderList & OrderCard 기초 작업 및 연동
+
 ## Project setup
 ```
 npm install
