@@ -117,6 +117,11 @@
 ### 2018-11-09
 - OrderList & OrderCard 기초 작업 및 연동
 
+### 2018-11-10
+- OrderList & OrderCard 작업 완료
+- css 파일 잘못 적용한거 해결
+- sellerQR Component 작업 및 연동
+
 ## Project setup
 ```
 npm install

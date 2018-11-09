@@ -1,5 +1,5 @@
 <template>
-    <div class="seller-qr-wrap">
+    <div class="seller-qr-wrap" :style="onQR">
         <img src="../../assets/qr@3x.png" alt="qr">
         <p class="seller-qr-name">위마켓</p>
         <p class="seller-qr-phone">010-1234-5678</p>
@@ -14,8 +14,26 @@
 
 <script>
   import './sellerQR.scss'
+  import {serverBus} from '../../main';
 
   export default {
-    name: "sellerQR"
+    name: "sellerQR",
+    computed: {
+      onQR() {
+        return {
+          top: this.isSellerQR ? '7.9vh' : '100vh'
+        }
+      }
+    },
+    data: () => ({
+      isSellerQR: false
+    }),
+    created() {
+      // Using the service bus
+      serverBus.$on('onSellerQR', (isSellerQR) => {
+        console.log('hello bus')
+        this.isSellerQR = true;
+      });
+    }
   }
 </script>

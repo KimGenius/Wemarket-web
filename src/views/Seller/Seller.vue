@@ -3,7 +3,7 @@
         <SellerHeader :is-left="isLeft" v-on:on-left="onLeft" v-on:on-right="onRight"></SellerHeader>
         <SellerContent :is-left="isLeft"></SellerContent>
         <Partners></Partners>
-        <SellerQR></SellerQR>
+        <SellerQR :is-seller-qr="isSellerQR"></SellerQR>
     </div>
 </template>
 
@@ -18,7 +18,8 @@
     name: "Seller",
     components: {SellerHeader, SellerContent, Partners, SellerQR},
     data: () => ({
-      isLeft: true
+      isLeft: true,
+      isSellerQR: false
     }),
     methods: {
       onLeft: function () {

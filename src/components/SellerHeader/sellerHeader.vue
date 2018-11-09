@@ -27,7 +27,8 @@
             <img src="../../assets/qr.png"
                  srcset="../../assets/qr@2x.png 2x, ../../assets/qr@3x.png 3x"
                  class="qr"
-                 alt="QR Code">
+                 alt="QR Code"
+                 @click="toggleSellerQR">
         </div>
         <div class="seller-header-bottom">
             <div v-on:click="onLeft"
@@ -37,7 +38,7 @@
             </div>
             <div v-on:click="onRight"
                  class="seller-header-bottom-right"
-                :style="rightStyle">
+                 :style="rightStyle">
                 <p>주문내역</p>
             </div>
         </div>
@@ -46,7 +47,7 @@
 
 <script>
   import './sellerHeader.scss'
-
+  import { serverBus } from '../../main';
   export default {
     name: "sellerHeader",
     data: () => ({
@@ -57,6 +58,7 @@
         borderBottom: 'none'
       }
     }),
+    props: ['server'],
     methods: {
       onLeft: function () {
         this.leftStyle.borderBottom = '5px solid #ff9922'
@@ -67,6 +69,10 @@
         this.leftStyle.borderBottom = 'none'
         this.rightStyle.borderBottom = '5px solid #ff9922'
         this.$emit('on-right')
+      },
+      toggleSellerQR: function () {
+        console.log('1')
+        serverBus.$emit('toggleSellerQr')
       }
     }
   }
