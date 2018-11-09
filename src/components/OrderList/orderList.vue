@@ -1,6 +1,7 @@
 <template>
     <div>
         <OrderCard></OrderCard>
+        <OrderCard></OrderCard>
     </div>
 </template>
 

@@ -1,3 +1,63 @@
+.order-card-wrap {
+  position: relative;
+  width: 95.6vw;
+  height: 19vh;
+  margin-bottom: 1.1vh;
+  background-color: #1c1c1c;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px; }
 
+.order-card-type {
+  position: relative;
+  width: 9.2vw;
+  height: 19vh;
+  float: left;
+  background-color: #ffe203;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px; }
 
-/*# sourceMappingURL=orders.css.map */
+.order-card-type p {
+  font-family: SeoulNamsanB;
+  font-size: 15px;
+  width: 19vh;
+  color: rgba(0, 0, 0, 0.6);
+  transform: rotate(90deg);
+  transform-origin: 0% 0%;
+  left: 6.6vw;
+  top: 1.1vh;
+  position: absolute;
+  height: 4.2vw;
+  margin-bottom: 0; }
+
+.order-card-info {
+  position: relative;
+  float: left;
+  width: 86.4vw;
+  height: 19vh;
+  padding: 1.1vh 2.2vw; }
+
+.order-card-info p {
+  margin-bottom: 0;
+  font-family: SeoulNamsanB;
+  font-size: 20px;
+  color: #ffffff; }
+
+.order-card-info-date {
+  color: #9a9a9a !important;
+  font-size: 15px !important;
+  position: absolute;
+  right: 2.2vw;
+  top: 1.1vh; }
+
+.order-card-info-price {
+  position: absolute;
+  bottom: 1.1vh; }
+
+.order-card-info-finish {
+  color: #ff9922 !important;
+  position: absolute;
+  right: 2.2vw;
+  bottom: 1.1vh; }
+
+/*# sourceMappingURL=orderList.css.map */
