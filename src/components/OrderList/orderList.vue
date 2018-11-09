@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import './orders.scss'
+  import './orderList.scss'
   import OrderCard from '../OrderCard'
 
   export default {

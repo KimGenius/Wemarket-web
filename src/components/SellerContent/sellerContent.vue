@@ -8,7 +8,7 @@
                 <SellerMenuList/>
             </div>
             <div class="seller-content-right">
-                <Orders></Orders>
+                <OrderList></OrderList>
             </div>
         </div>
     </div>
@@ -20,7 +20,7 @@
   import SellerContentIntroBox from '../SellerContentIntroBox'
   import SellerContentMenuText from '../SellerContentMenuText'
   import SellerMenuList from '../SellerMenuList'
-  import Orders from '../Orders'
+  import OrderList from '../OrderList'
 
   export default {
     name: "sellerContent",
@@ -29,7 +29,7 @@
       SellerContentIntroBox,
       SellerContentMenuText,
       SellerMenuList,
-      Orders
+      OrderList
     },
     computed: {
       focusContent() {
