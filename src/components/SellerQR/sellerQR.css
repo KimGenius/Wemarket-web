@@ -1,0 +1,43 @@
+.seller-qr-wrap {
+  position: absolute;
+  width: 100vw;
+  height: 92.1vh;
+  top: 7.9vh;
+  top: 100vh;
+  z-index: 5;
+  background-color: #ffffff;
+  text-align: center; }
+
+.seller-qr-wrap img {
+  display: inline-block;
+  width: 73.3vw;
+  height: 36.7vh;
+  margin-bottom: 3.1vh; }
+
+.seller-qr-wrap p {
+  font-family: SeoulNamsanEB;
+  margin-bottom: 0; }
+
+.seller-qr-name {
+  font-size: 50px;
+  color: #ff9922;
+  margin-bottom: 1.4vh !important; }
+
+.seller-qr-phone {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 8.3vh !important; }
+
+.seller-qr-content {
+  line-height: 1.94;
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 18px;
+  margin-bottom: 8.1vh !important; }
+
+.seller-qr-link,
+.seller-qr-link * {
+  font-size: 15px;
+  color: #ff9922;
+  text-decoration: none; }
+
+/*# sourceMappingURL=sellerQR.css.map */
