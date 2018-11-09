@@ -121,6 +121,7 @@
 - OrderList & OrderCard 작업 완료
 - css 파일 잘못 적용한거 해결
 - sellerQR Component 작업 및 연동
+- server bus emit 작업중 
 
 ## Project setup
 ```
