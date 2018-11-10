@@ -37,7 +37,11 @@
 .seller-header-top .qr {
   position: relative;
   float: right;
-  padding-top: 2.4vh;
+  margin-top: 2.4vh;
+  width: 6.7vw;
+  height: 3.3vh;
+  background-size: cover;
+  background-image: url('../../assets/back@3x.png');
 }
 
 .seller-header-bottom {

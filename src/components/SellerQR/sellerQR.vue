@@ -30,9 +30,8 @@
     }),
     created() {
       // Using the service bus
-      serverBus.$on('onSellerQR', (isSellerQR) => {
-        console.log('hello bus')
-        this.isSellerQR = true;
+      serverBus.$on('toggleSellerQR', () => {
+        this.isSellerQR = !this.isSellerQR;
       });
     }
   }
