@@ -49,7 +49,7 @@
                             class='join-input'
                             label='점포 설명'
                             color='#ff9922'
-                            placeholder="전화번호와 판매 장소를 입력하세요"
+                            placeholder="판매 장소와 한줄 소개를 입력하세요"
                             box
                     ></v-text-field>
                 </v-flex>
