@@ -121,7 +121,10 @@
 - OrderList & OrderCard 작업 완료
 - css 파일 잘못 적용한거 해결
 - sellerQR Component 작업 및 연동
-- server bus emit 작업중 
+- server bus emit 작업완료 
+- QRCode 작업 완료
+- QRCode display 수정
+- seller 깨지는거 수정
 
 ## Project setup
 ```
