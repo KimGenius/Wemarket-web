@@ -10,6 +10,7 @@
                             label='아이디'
                             color='#ff9922'
                             box
+                            v-model="joinData.id"
                     ></v-text-field>
                     <v-text-field
                             hide-details
@@ -18,6 +19,7 @@
                             color='#ff9922'
                             box
                             type='password'
+                            v-model="joinData.pw"
                     ></v-text-field>
                     <v-text-field
                             hide-details
@@ -26,6 +28,7 @@
                             color='#ff9922'
                             box
                             type='password'
+                            v-model="joinData.pwCheck"
                     ></v-text-field>
                 </v-flex>
                 <p class='join-toggle-btn join-input-title'>점포정보</p>
@@ -35,12 +38,14 @@
                             class='join-input'
                             label='점포명'
                             color='#ff9922'
+                            v-model="joinData.storeName"
                             box
                     ></v-text-field>
                     <v-text-field
                             hide-details
                             class='join-input'
                             label='업종'
+                            v-model="joinData.storeType"
                             color='#ff9922'
                             box
                     ></v-text-field>
@@ -49,6 +54,7 @@
                             class='join-input'
                             label='점포 설명'
                             color='#ff9922'
+                            v-model="joinData.storeDesc"
                             placeholder="판매 장소와 한줄 소개를 입력하세요"
                             box
                     ></v-text-field>
@@ -60,12 +66,14 @@
                             class='join-input'
                             label='사업자명'
                             color='#ff9922'
+                            v-model="joinData.sellerName"
                             box
                     ></v-text-field>
                     <v-text-field
                             hide-details
                             class='join-input'
                             label='사업자등록번호'
+                            v-model="joinData.sellerCode"
                             color='#ff9922'
                             box
                     ></v-text-field>
@@ -73,6 +81,7 @@
                             hide-details
                             class='join-input'
                             label='전화번호'
+                            v-model="joinData.phone"
                             color='#ff9922'
                             box
                     ></v-text-field>
@@ -80,6 +89,7 @@
                             hide-details
                             class='join-input'
                             label='은행입력'
+                            v-model="joinData.bank"
                             color='#ff9922'
                             box
                     ></v-text-field>
@@ -89,10 +99,11 @@
                             label='계좌번호'
                             color='#ff9922'
                             box
+                            v-model="joinData.accountNumber"
                     ></v-text-field>
                 </v-flex>
                 <v-flex>
-                    <v-btn class='join-input join-submit'>회원가입</v-btn>
+                    <v-btn class='join-input join-submit' @click="submitJoin">회원가입</v-btn>
                 </v-flex>
             </v-form>
         </div>
@@ -100,6 +111,7 @@
 </template>
 
 <script>
+  import axios from 'axios'
   import './join.scss'
   export default {
     name: 'waitjoin',
@@ -125,12 +137,52 @@
       }
     },
     data: () => ({
-      isJoin: false
+      isJoin: false,
+      joinData: {
+        id: '',
+        pw: '',
+        pwCheck: '',
+        storeName: '',
+        storeDesc: '',
+        storeType: '',
+        sellerName: '',
+        sellerCode: '',
+        phone: '',
+        bank: '',
+        accountNumber: ''
+      }
     }),
     methods: {
       toggleJoin: function () {
         this.isJoin = !this.isJoin
         this.$emit('change-color')
+      },
+      async submitJoin () {
+        const {joinData} = this
+        if (joinData.pw !== joinData.pwCheck) {
+          alert('비밀번호를 확인해주세요')
+        } else {
+          try {
+            await axios.post('http://localhost:3000/join', {
+              id: joinData.id,
+              pw: joinData.pw,
+              // pwCheck: joinData.pwCheck,
+              storeName: joinData.storeName,
+              storeDesc: joinData.storeDesc,
+              storeType: joinData.storeType,
+              sellerName: joinData.sellerName,
+              sellerCode: joinData.sellerCode,
+              phone: joinData.phone,
+              bank: joinData.bank,
+              accountNumber: joinData.accountNumber
+            })
+            alert('회원가입 성공')
+            this.$router.replace('/seller')
+          } catch (e) {
+            if (e.message === 'Request failed with status code 409') alert('이미 있는 계정')
+            else alert(e.message)
+          }
+        }
       }
     }
   }
