@@ -78,7 +78,7 @@
                     <v-text-field
                             hide-details
                             class='join-input'
-                            label='은행선택'
+                            label='은행입력'
                             color='#ff9922'
                             box
                     ></v-text-field>
