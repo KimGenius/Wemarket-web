@@ -42,7 +42,8 @@
 .seller-header-bottom {
   position: relative;
   width: 100vw;
-  height: 6.2vh; }
+  height: 6.2vh;
+  float: left; }
 
 .seller-header-bottom > div {
   position: relative;
