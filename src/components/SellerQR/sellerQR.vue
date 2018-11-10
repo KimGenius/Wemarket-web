@@ -21,7 +21,8 @@
     computed: {
       onQR() {
         return {
-          top: this.isSellerQR ? '7.9vh' : '100vh'
+          top: this.isSellerQR ? '7.9vh' : '100vh',
+          display: this.isSellerQR ? 'block' : 'none'
         }
       }
     },
