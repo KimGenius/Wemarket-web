@@ -27,7 +27,6 @@
     name: "sellerMenu",
     data: () => ({
       isEdit: false,
-      menuName: '큐브스테이크'
     }),
     props: {
       item: Object,
@@ -41,8 +40,18 @@
       }
     },
     methods: {
-      submitDelete: function () {
-        console.log(this.menuName)
+      submitDelete: async function () {
+        try {
+          const result = await axios.delete(`http://localhost:3000/menu/${this.item.idx}`)
+          if (result.status === 200) {
+            alert('메뉴가 제거되었습니다.')
+            location.reload()
+          }
+        } catch (e) {
+          if(e.message === 'Request failed with status code 404') {
+            alert('없는 메뉴 입니다.')
+          }
+        }
       }
     },
     created() {
@@ -74,7 +83,6 @@
       })
     },
     async mounted() {
-      console.log(this.isEdit)
       document.getElementById("menuName").addEventListener("input", function () {
         this.menuName = document.getElementById("menuName").innerHTML
         console.log(this.menuName)
