@@ -10,9 +10,10 @@
              srcset="../../assets/photo@2x.png 2x,
              ../../assets/photo@3x.png 3x"
              class="seller-menu-image">
-        <p v-bind:contenteditable="isPropsAdd || isEdit" v-bind:id="'menuName'+this.item.idx">{{this.item.name}}</p>
-        <p v-bind:contenteditable="isPropsAdd || isEdit" v-bind:id="'menuPrice'+this.item.idx">
-            {{this.item.price.toLocaleString()}}₩</p>
+        <!--<p v-bind:contenteditable="isPropsAdd || isEdit" v-bind:id="'menuName'+this.item.idx">{{this.item.name}}</p>-->
+        <!--<p v-bind:contenteditable="isPropsAdd || isEdit" v-bind:id="'menuPrice'+this.item.idx">{{this.item.price.toLocaleString()}}₩</p>-->
+        <p v-bind:id="'menuName'+this.item.idx">{{this.item.name}}</p>
+        <p v-bind:id="'menuPrice'+this.item.idx">{{this.item.price.toLocaleString()}}₩</p>
     </div>
 </template>
 
@@ -56,9 +57,6 @@
     },
     created() {
       serverBus.$on('sellerMenuEdit', () => {
-        this.isEdit = !this.isEdit
-      })
-      serverBus.$on('sellerMenuAdd', () => {
         this.isEdit = !this.isEdit
       })
       serverBus.$on('sellerMenuAddComplete', async () => {
