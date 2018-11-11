@@ -6,14 +6,14 @@
              class="seller-menu-delete"
              :style="onEdit"
              @click="submitDelete">
-        <img src="../../assets/photo.png" alt="photo"
-             srcset="../../assets/photo@2x.png 2x,
-             ../../assets/photo@3x.png 3x"
+        <img :src="this.image || '/img/photo.3d1097c9.png'" alt="photo"
              class="seller-menu-image">
+        <input id="file" type="file" :style="onEdit" @change="processFile($event)" class="seller-menu-image-input">
         <!--<p v-bind:contenteditable="isPropsAdd || isEdit" v-bind:id="'menuName'+this.item.idx">{{this.item.name}}</p>-->
         <!--<p v-bind:contenteditable="isPropsAdd || isEdit" v-bind:id="'menuPrice'+this.item.idx">{{this.item.price.toLocaleString()}}₩</p>-->
-        <p v-bind:id="'menuName'+this.item.idx">{{this.item.name}}</p>
-        <p v-bind:id="'menuPrice'+this.item.idx">{{this.item.price.toLocaleString()}}₩</p>
+        <p v-bind:contenteditable="isPropsAdd" v-bind:id="'menuName'+this.item.idx">{{this.item.name}}</p>
+        <p v-bind:contenteditable="isPropsAdd" v-bind:id="'menuPrice'+this.item.idx">
+            {{this.item.price.toLocaleString()}}₩</p>
     </div>
 </template>
 
@@ -28,6 +28,8 @@
     name: "sellerMenu",
     data: () => ({
       isEdit: false,
+      image: '',
+      imageFile: {}
     }),
     props: {
       item: Object,
@@ -49,9 +51,21 @@
             location.reload()
           }
         } catch (e) {
-          if(e.message === 'Request failed with status code 404') {
+          if (e.message === 'Request failed with status code 404') {
             alert('없는 메뉴 입니다.')
           }
+        }
+      },
+      processFile(event) {
+        const input = event.target;
+        if (input.files && input.files[0]) {
+          const reader = new FileReader()
+          reader.onload = (e) => {
+            this.image = e.target.result
+            this.imageFile = input.files[0]
+            console.log(this.imageFile)
+          }
+          reader.readAsDataURL(input.files[0])
         }
       }
     },
@@ -64,13 +78,20 @@
           const cookieToken = cookie.get('WMUD')
           const {idx} = jwt.decode(cookieToken)
           const name = document.getElementById("menuName0").innerHTML
-          console.log(name)
+          const formData = new FormData();
+          formData.append("image", this.imageFile)
           const price = document.getElementById("menuPrice0").innerHTML.split('₩')[0]
-          const result = await axios.post(`http://localhost:3000/menu/${idx}`, {
-            name,
-            price,
-            image: ''
-          })
+          const {data} = await axios.post(`http://localhost:3000/menu/${idx}`,
+            {
+              name,
+              price
+            })
+          const result = await axios.post(`http://localhost:3000/menu/${idx}/image/${data.idx}`,
+            formData, {
+              headers: {
+                'Content-Type': 'multipart/form-data'
+              }
+            })
           if (result.status === 200) {
             alert('메뉴가 등록되었습니다')
             location.reload()
@@ -81,14 +102,14 @@
       })
     },
     async mounted() {
-      document.getElementById("menuName").addEventListener("input", function () {
-        this.menuName = document.getElementById("menuName").innerHTML
-        console.log(this.menuName)
-      }, false)
-      document.getElementById("menuPrice").addEventListener("input", function () {
-        this.menuName = document.getElementById("menuPrice").innerHTML
-        console.log(this.menuName)
-      }, false)
+      // document.getElementById("menuName").addEventListener("input", function () {
+      //   this.menuName = document.getElementById("menuName").innerHTML
+      //   console.log(this.menuName)
+      // }, false)
+      // document.getElementById("menuPrice").addEventListener("input", function () {
+      //   this.menuName = document.getElementById("menuPrice").innerHTML
+      //   console.log(this.menuName)
+      // }, false)
     }
   }
 </script>
