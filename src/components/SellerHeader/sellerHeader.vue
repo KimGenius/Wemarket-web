@@ -23,7 +23,7 @@
                     </g>
                 </g>
             </svg>
-            <p>위마켓</p>
+            <p>{{storeName}}</p>
             <div class="qr"
                  @click="toggleSellerQR"
                  :style="qrImg"></div>
@@ -46,6 +46,8 @@
 <script>
   import './sellerHeader.scss'
   import {serverBus} from '../../main';
+  import jwt from 'jsonwebtoken'
+  import cookie from 'js-cookie'
 
   export default {
     name: "sellerHeader",
@@ -56,8 +58,14 @@
       rightStyle: {
         borderBottom: 'none'
       },
-      isQRImg: true
+      isQRImg: true,
+      storeName: ''
     }),
+    created() {
+      const cookieToken = cookie.get('WMUD')
+      const {storeName} = jwt.decode(cookieToken)
+      this.storeName = storeName
+    },
     computed: {
       qrImg() {
         return {
