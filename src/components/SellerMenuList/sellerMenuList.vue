@@ -42,6 +42,7 @@
         const {idx} = jwt.decode(cookieToken)
         const {data} = await axios.get(`http://localhost:3000/menu/${idx}`)
         this.menuList = data
+        console.log(data)
       }
     },
     async created() {

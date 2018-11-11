@@ -6,7 +6,7 @@
              class="seller-menu-delete"
              :style="onEdit"
              @click="submitDelete">
-        <img :src="this.image || '/img/photo.3d1097c9.png'" alt="photo"
+        <img :src="this.item.image ? 'http://localhost:3000/uploads/'+this.item.image : this.image || '/img/photo.3d1097c9.png'" alt="photo"
              class="seller-menu-image">
         <input id="file" type="file" :style="onEdit" @change="processFile($event)" class="seller-menu-image-input">
         <!--<p v-bind:contenteditable="isPropsAdd || isEdit" v-bind:id="'menuName'+this.item.idx">{{this.item.name}}</p>-->
@@ -63,7 +63,6 @@
           reader.onload = (e) => {
             this.image = e.target.result
             this.imageFile = input.files[0]
-            console.log(this.imageFile)
           }
           reader.readAsDataURL(input.files[0])
         }
@@ -78,7 +77,7 @@
           const cookieToken = cookie.get('WMUD')
           const {idx} = jwt.decode(cookieToken)
           const name = document.getElementById("menuName0").innerHTML
-          const formData = new FormData();
+          const formData = new FormData()
           formData.append("image", this.imageFile)
           const price = document.getElementById("menuPrice0").innerHTML.split('₩')[0]
           const {data} = await axios.post(`http://localhost:3000/menu/${idx}`,
