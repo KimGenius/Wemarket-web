@@ -10,8 +10,8 @@
              srcset="../../assets/photo@2x.png 2x,
              ../../assets/photo@3x.png 3x"
              class="seller-menu-image">
-        <p v-bind:contenteditable="isEdit" id="editor">{{menuName}}</p>
-        <p>10,000₩</p>
+        <p v-bind:contenteditable="isEdit" id="editor">{{this.item.name}}</p>
+        <p>{{this.item.price.toLocaleString()}}₩</p>
     </div>
 </template>
 
@@ -25,6 +25,9 @@
       isEdit: false,
       menuName: '큐브스테이크'
     }),
+    props: {
+      item: Object
+    },
     computed: {
       onEdit() {
         return {
@@ -42,7 +45,7 @@
         this.isEdit = !this.isEdit;
       });
     },
-    mounted() {
+    async mounted() {
       document.getElementById("editor").addEventListener("input", function () {
         this.menuName = document.getElementById("editor").innerHTML
         console.log(this.menuName)
