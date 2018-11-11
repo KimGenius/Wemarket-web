@@ -10,8 +10,8 @@
              srcset="../../assets/photo@2x.png 2x,
              ../../assets/photo@3x.png 3x"
              class="seller-menu-image">
-        <p v-bind:contenteditable="isEdit" id="editor">{{this.item.name}}</p>
-        <p>{{this.item.price.toLocaleString()}}₩</p>
+        <p v-bind:contenteditable="isEdit" id="menuName">{{this.item.name}}</p>
+        <p v-bind:contenteditable="isEdit" id="menuPrice">{{this.item.price.toLocaleString()}}₩</p>
     </div>
 </template>
 
@@ -42,12 +42,16 @@
     },
     created() {
       serverBus.$on('sellerMenuEdit', () => {
-        this.isEdit = !this.isEdit;
-      });
+        this.isEdit = !this.isEdit
+      })
     },
     async mounted() {
-      document.getElementById("editor").addEventListener("input", function () {
-        this.menuName = document.getElementById("editor").innerHTML
+      document.getElementById("menuName").addEventListener("input", function () {
+        this.menuName = document.getElementById("menuName").innerHTML
+        console.log(this.menuName)
+      }, false)
+      document.getElementById("menuPrice").addEventListener("input", function () {
+        this.menuName = document.getElementById("menuPrice").innerHTML
         console.log(this.menuName)
       }, false)
     }
