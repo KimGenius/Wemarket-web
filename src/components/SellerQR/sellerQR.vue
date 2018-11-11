@@ -1,8 +1,8 @@
 <template>
     <div class="seller-qr-wrap" :style="onQR">
         <img src="../../assets/qr@3x.png" alt="qr">
-        <p class="seller-qr-name">위마켓</p>
-        <p class="seller-qr-phone">010-1234-5678</p>
+        <p class="seller-qr-name">{{storeName}}</p>
+        <p class="seller-qr-phone">{{phone}}</p>
         <p class="seller-qr-content">이제 위 QR코드를 스캔하여<br>
             상품을 주문할 수 있습니다</p>
         <p class="seller-qr-link">
@@ -15,6 +15,8 @@
 <script>
   import './sellerQR.scss'
   import {serverBus} from '../../main';
+  import jwt from 'jsonwebtoken'
+  import cookie from 'js-cookie'
 
   export default {
     name: "sellerQR",
@@ -31,6 +33,10 @@
     }),
     created() {
       // Using the service bus
+      const cookieToken = cookie.get('WMUD')
+      const {storeName, phone} = jwt.decode(cookieToken)
+      this.storeName = storeName
+      this.phone = phone
       serverBus.$on('toggleSellerQR', () => {
         this.isSellerQR = !this.isSellerQR;
       });
