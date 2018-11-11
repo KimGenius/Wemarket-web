@@ -29,8 +29,6 @@
 </template>
 
 <script>
-  /* eslint-disable no-console */
-
   import AppIntro from '../../components/AppIntro'
   import Join from '../../components/Join'
   import './login.scss'
@@ -63,9 +61,6 @@
           cookie.set('WMUD', token)
           alert('환영합니다')
           this.$router.replace('/seller')
-          // const cookieToken = cookie.get('WMUD', token)
-          // const decoded = jwt.decode(cookieToken)
-          // console.log(decoded)
         } catch (e) {
           if (e.message === 'Request failed with status code 404'){
             alert('존재하지 않는 계정입니다.')
