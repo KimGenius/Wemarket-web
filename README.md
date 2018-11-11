@@ -126,6 +126,15 @@
 - QRCode display 수정
 - seller 깨지는거 수정
 
+### 2018-11-11
+- login 연동
+
+### 2018-11-12
+- 소개 데이터 연동
+- 가게 이름 데이터 연동
+- 메뉴 삭제 ui 이벤트 작업
+- 메뉴 리스트 연동
+
 ## Project setup
 ```
 npm install
