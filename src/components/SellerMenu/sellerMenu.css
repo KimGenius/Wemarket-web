@@ -4,11 +4,17 @@
   height: 32.2vh;
   background-color: #fff;
   border-radius: 5px;
-  float: left; }
+  float: left;
+  z-index: 10; }
 
-.seller-menu-wrap > img {
+.seller-menu-image {
   width: 100%;
   height: 23.3vh; }
+
+.seller-menu-delete {
+  position: absolute;
+  top: -2vh;
+  right: -4vw; }
 
 .seller-menu-wrap > p {
   text-align: center;

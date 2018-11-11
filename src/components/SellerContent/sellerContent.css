@@ -4,7 +4,8 @@
   height: 85.8vh;
   background-color: #f4f4f4;
   overflow-y: scroll;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  z-index: 5; }
 
 .seller-content-fragment {
   position: relative;

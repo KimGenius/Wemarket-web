@@ -4,7 +4,8 @@
   height: 6.7vh;
   padding-top: 2.2vh;
   padding-right: 2.2vw;
-  padding-left: 2.2vw; }
+  padding-left: 2.2vw;
+  z-index: 10; }
 
 .seller-content-menu > p {
   float: left; }

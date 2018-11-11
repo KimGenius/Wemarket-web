@@ -1,14 +1,32 @@
 <template>
     <div class="seller-content-menu">
         <p>메뉴</p>
-        <p>수정</p>
-        <p>추가</p>
+        <p @click="onEditMode">{{editText}}</p>
+        <p>{{addText}}</p>
     </div>
 </template>
 
 <script>
   import './sellerContentMenuText.scss'
+  import {serverBus} from '../../main';
+
   export default {
-    name: "SellerContentMenuText"
+    name: "SellerContentMenuText",
+    data: () => ({
+      editText: '수정',
+      addText: '추가',
+    }),
+    methods: {
+      onEditMode: function () {
+        if (this.editText === '수정') {
+          this.editText = '완료'
+          this.addText = ''
+        } else {
+          this.editText = '수정'
+          this.addText = '추가'
+        }
+        serverBus.$emit('sellerMenuEdit')
+      }
+    }
   }
 </script>
