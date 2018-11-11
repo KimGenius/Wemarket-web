@@ -10,7 +10,7 @@
              srcset="../../assets/photo@2x.png 2x,
              ../../assets/photo@3x.png 3x"
              class="seller-menu-image">
-        <p>큐브스테이크</p>
+        <p v-bind:contenteditable="isEdit" id="editor">{{menuName}}</p>
         <p>10,000₩</p>
     </div>
 </template>
@@ -22,7 +22,8 @@
   export default {
     name: "sellerMenu",
     data: () => ({
-      isEdit: false
+      isEdit: false,
+      menuName: '큐브스테이크'
     }),
     computed: {
       onEdit() {
@@ -33,14 +34,19 @@
     },
     methods: {
       submitDelete: function () {
-        console.log('delete Menu')
+        console.log(this.menuName)
       }
     },
     created() {
-      // Using the service bus
       serverBus.$on('sellerMenuEdit', () => {
         this.isEdit = !this.isEdit;
       });
+    },
+    mounted() {
+      document.getElementById("editor").addEventListener("input", function () {
+        this.menuName = document.getElementById("editor").innerHTML
+        console.log(this.menuName)
+      }, false)
     }
   }
 </script>
