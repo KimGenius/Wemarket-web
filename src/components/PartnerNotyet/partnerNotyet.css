@@ -1,0 +1,43 @@
+.partners-notyet-wrap p:first-of-type {
+  font-family: SeoulNamsanEB;
+  font-size: 60px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+  left: 4.4vw;
+  position: absolute; }
+
+.partners-notyet-wrap p:nth-of-type(2) {
+  font-family: SeoulNamsanEB;
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.67;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+  left: 4.4vw;
+  top: 46.1vh;
+  position: absolute; }
+
+.partners-notyet-wrap p:last-of-type {
+  width: 91.1vw;
+  height: 7.8vh;
+  top: 82.1vh;
+  background-color: #ffffff;
+  position: absolute;
+  left: 4.4vw;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+  line-height: 7.8vh;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.6);
+  border-radius: 5px; }
+
+/*# sourceMappingURL=partnerNotyet.css.map */

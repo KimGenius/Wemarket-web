@@ -8,12 +8,7 @@
                 :style="isPartnersStyle"
         />
         <PartnersPending :style="isPartnerPendingStyle"></PartnersPending>
-        <!--<PartnerNotyet-->
-                <!--title="파트너 혜택의 제목입니다."-->
-                <!--content="이 곳에는 내용이 들어갑니다. 따로 요약되거나 하지 않고, 주어진 정보가 최대한 그대로 대입됩니다. 파트너들은 내용을 읽어보고,"-->
-                <!--date="2018.12.01 마감"-->
-                <!--:style="isPartnerNotyetStyle"-->
-        <!--/>-->
+        <PartnerNotyet :style="isPartnerNotyetStyle"/>
     </div>
 </template>
 
@@ -21,12 +16,13 @@
   import './partners.scss'
   import PartnersCard from '../PartnersCard'
   import PartnersPending from '../PartnersPending'
+  import PartnerNotyet from '../PartnerNotyet'
   import jwt from 'jsonwebtoken'
   import cookie from 'js-cookie'
 
   export default {
     name: "partners",
-    components: {PartnersCard, PartnersPending},
+    components: {PartnersCard, PartnersPending, PartnerNotyet},
     data: () => ({
       isPartners: false,
       sellerLevel: ''
@@ -44,12 +40,12 @@
       },
       isPartnerNotyetStyle() {
         return {
-          display: this.sellerLevel === 'SELLER' ? 'block' : 'none'
+          display: this.sellerLevel === 'SELLER' ? 'block' : 'block'
         }
       },
       isPartnerPendingStyle() {
         return {
-          display: this.sellerLevel === 'PENDING' ? 'block' : 'block'
+          display: this.sellerLevel === 'PENDING' ? 'none' : 'none'
         }
       }
     },
