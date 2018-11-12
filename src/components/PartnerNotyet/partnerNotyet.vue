@@ -48,6 +48,10 @@
 
 <script>
   import './partnerNotyet.scss'
+  import axios from 'axios'
+  import jwt from 'jsonwebtoken'
+  import cookie from 'js-cookie'
+  import config from '../../config'
 
   export default {
     name: "partnerNotyet",
@@ -55,8 +59,21 @@
       dialog: false
     }),
     methods: {
-      submitPartner() {
+      async submitPartner() {
         this.dialog = false
+        const cookieToken = cookie.get('WMUD')
+        const {idx} = jwt.decode(cookieToken)
+        const {status, data} = await axios.put(`${config.host}/user/${idx}/level`, {
+          level: 'PENDING'
+        })
+        if (status === 200) {
+          const token = jwt.sign(data, 'shhhhh')
+          cookie.set('WMUD', token)
+          alert('신청되었습니다')
+          location.reload()
+        } else {
+          alert('error')
+        }
       }
     }
   }

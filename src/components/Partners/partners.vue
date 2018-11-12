@@ -35,17 +35,17 @@
       },
       isPartnersStyle() {
         return {
-          display: this.sellerLevel === 'PARTNERS' ? 'none' : 'none'
+          display: this.sellerLevel === 'PARTNERS' ? 'block' : 'none'
         }
       },
       isPartnerNotyetStyle() {
         return {
-          display: this.sellerLevel === 'SELLER' ? 'block' : 'block'
+          display: this.sellerLevel === 'SELLER' ? 'block' : 'none'
         }
       },
       isPartnerPendingStyle() {
         return {
-          display: this.sellerLevel === 'PENDING' ? 'none' : 'none'
+          display: this.sellerLevel === 'PENDING' ? 'block' : 'none'
         }
       }
     },
