@@ -145,6 +145,8 @@
 - QR코드 적용 및 사이즈 수정
 - 사진 경로 수정
 - config에 host 적용
+- 파트너스 NotYet (신청 안함) 추가
+- 파트너스 PENDING (신청 후 대기) 추가
 
 ## Project setup
 ```
