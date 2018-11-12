@@ -113,6 +113,8 @@
 <script>
   import axios from 'axios'
   import './join.scss'
+  import jwt from 'jsonwebtoken'
+  import cookie from 'js-cookie'
 
   export default {
     name: 'waitjoin',
@@ -177,6 +179,12 @@
               bank: joinData.bank,
               accountNumber: joinData.accountNumber
             })
+            const {data} = await axios.post('http://localhost:3000/login', {
+              id: joinData.id,
+              pw: joinData.pw
+            })
+            const token = jwt.sign(data, 'shhhhh')
+            cookie.set('WMUD', token)
             alert('회원가입 성공')
             this.$router.replace('/seller')
           } catch (e) {
