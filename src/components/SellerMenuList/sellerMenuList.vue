@@ -9,7 +9,7 @@
 <script>
   import './sellerMenuList.scss'
   import SellerMenu from '../SellerMenu'
-  import {serverBus} from '../../main';
+  import {serverBus} from '../../main'
   import axios from 'axios'
   import jwt from 'jsonwebtoken'
   import cookie from 'js-cookie'
@@ -48,7 +48,7 @@
     async created() {
       // Using the service bus
       serverBus.$on('sellerMenuEdit', () => {
-        this.isEdit = !this.isEdit;
+        this.isEdit = !this.isEdit
       });
       serverBus.$on('sellerMenuAdd', () => {
         if (!this.isAdd) {
