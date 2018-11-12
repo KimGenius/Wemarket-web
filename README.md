@@ -147,6 +147,8 @@
 - config에 host 적용
 - 파트너스 NotYet (신청 안함) 추가
 - 파트너스 PENDING (신청 후 대기) 추가
+- 파트너스 상태 변경 API 연동
+- 잘 되지만 minHeight 추가
 
 ## Project setup
 ```
