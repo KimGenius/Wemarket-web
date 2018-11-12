@@ -22,3 +22,4 @@ yarn-error.log*
 
 # Custom
 package-lock.json
+dump.rdb
