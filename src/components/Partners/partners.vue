@@ -5,24 +5,51 @@
                 title="파트너 혜택의 제목입니다."
                 content="이 곳에는 내용이 들어갑니다. 따로 요약되거나 하지 않고, 주어진 정보가 최대한 그대로 대입됩니다. 파트너들은 내용을 읽어보고,"
                 date="2018.12.01 마감"
+                :style="isPartnersStyle"
         />
+        <PartnersPending :style="isPartnerPendingStyle"></PartnersPending>
+        <!--<PartnerNotyet-->
+                <!--title="파트너 혜택의 제목입니다."-->
+                <!--content="이 곳에는 내용이 들어갑니다. 따로 요약되거나 하지 않고, 주어진 정보가 최대한 그대로 대입됩니다. 파트너들은 내용을 읽어보고,"-->
+                <!--date="2018.12.01 마감"-->
+                <!--:style="isPartnerNotyetStyle"-->
+        <!--/>-->
     </div>
 </template>
 
 <script>
   import './partners.scss'
   import PartnersCard from '../PartnersCard'
+  import PartnersPending from '../PartnersPending'
+  import jwt from 'jsonwebtoken'
+  import cookie from 'js-cookie'
 
   export default {
     name: "partners",
-    components: {PartnersCard},
+    components: {PartnersCard, PartnersPending},
     data: () => ({
-      isPartners: false
+      isPartners: false,
+      sellerLevel: ''
     }),
     computed: {
       partnersStyle() {
         return {
           top: this.isPartners ? '7.9vh' : '92.1vh'
+        }
+      },
+      isPartnersStyle() {
+        return {
+          display: this.sellerLevel === 'PARTNERS' ? 'none' : 'none'
+        }
+      },
+      isPartnerNotyetStyle() {
+        return {
+          display: this.sellerLevel === 'SELLER' ? 'block' : 'none'
+        }
+      },
+      isPartnerPendingStyle() {
+        return {
+          display: this.sellerLevel === 'PENDING' ? 'block' : 'block'
         }
       }
     },
@@ -30,6 +57,11 @@
       onPartners: function () {
         this.isPartners = !this.isPartners
       }
+    },
+    created() {
+      const cookieToken = cookie.get('WMUD')
+      const {level} = jwt.decode(cookieToken)
+      this.sellerLevel = level
     }
   }
 </script>
