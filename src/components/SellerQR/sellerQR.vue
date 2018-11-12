@@ -1,6 +1,6 @@
 <template>
     <div class="seller-qr-wrap" :style="onQR">
-        <img src="../../assets/websiteQRCode_noFrame.png" alt="qr">
+        <img src="../../assets/QR_Code_.png" alt="qr">
         <p class="seller-qr-name">{{storeName}}</p>
         <p class="seller-qr-phone">{{phone}}</p>
         <p class="seller-qr-content">이제 위 QR코드를 스캔하여<br>
