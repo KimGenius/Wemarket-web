@@ -115,6 +115,7 @@
   import './join.scss'
   import jwt from 'jsonwebtoken'
   import cookie from 'js-cookie'
+  import config from '../../config'
 
   export default {
     name: 'waitjoin',
@@ -166,7 +167,7 @@
           alert('비밀번호를 확인해주세요')
         } else {
           try {
-            await axios.post('http://localhost:3000/join', {
+            await axios.post(`${config.host}/join`, {
               id: joinData.id,
               pw: joinData.pw,
               // pwCheck: joinData.pwCheck,
@@ -179,7 +180,7 @@
               bank: joinData.bank,
               accountNumber: joinData.accountNumber
             })
-            const {data} = await axios.post('http://localhost:3000/login', {
+            const {data} = await axios.post(`${config.host}/login`, {
               id: joinData.id,
               pw: joinData.pw
             })

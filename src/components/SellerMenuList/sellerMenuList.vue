@@ -14,6 +14,7 @@
   import jwt from 'jsonwebtoken'
   import cookie from 'js-cookie'
   import Vue from 'vue'
+  import config from '../../config'
 
   export default {
     name: "sellerMenuList",
@@ -40,7 +41,7 @@
       async fetchData() {
         const cookieToken = cookie.get('WMUD')
         const {idx} = jwt.decode(cookieToken)
-        const {data} = await axios.get(`http://localhost:3000/menu/${idx}`)
+        const {data} = await axios.get(`${config.host}/menu/${idx}`)
         this.menuList = data
         console.log(data)
       }

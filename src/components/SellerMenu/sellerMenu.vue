@@ -6,7 +6,7 @@
              class="seller-menu-delete"
              :style="onEdit"
              @click="submitDelete">
-        <img :src="this.item.image ? 'http://localhost:3000/uploads/'+this.item.image : this.image || '/img/photo.3d1097c9.png'" alt="photo"
+        <img :src="this.item.image ? this.imagePath : this.image || '/img/photo.3d1097c9.png'" alt="photo"
              class="seller-menu-image">
         <input id="file" type="file" :style="onEdit" @change="processFile($event)" class="seller-menu-image-input">
         <!--<p v-bind:contenteditable="isPropsAdd || isEdit" v-bind:id="'menuName'+this.item.idx">{{this.item.name}}</p>-->
@@ -23,13 +23,15 @@
   import axios from 'axios'
   import jwt from 'jsonwebtoken'
   import cookie from 'js-cookie'
+  import config from '../../config'
 
   export default {
     name: "sellerMenu",
     data: () => ({
       isEdit: false,
       image: '',
-      imageFile: {}
+      imageFile: {},
+      imagePath: `${config.host}/uploads/`
     }),
     props: {
       item: Object,
@@ -45,7 +47,7 @@
     methods: {
       submitDelete: async function () {
         try {
-          const result = await axios.delete(`http://localhost:3000/menu/${this.item.idx}`)
+          const result = await axios.delete(`${config.host}/menu/${this.item.idx}`)
           if (result.status === 200) {
             alert('메뉴가 제거되었습니다.')
             location.reload()
@@ -69,6 +71,7 @@
       }
     },
     created() {
+      this.imagePath += this.item.image
       serverBus.$on('sellerMenuEdit', () => {
         this.isEdit = !this.isEdit
       })
@@ -80,12 +83,12 @@
           const formData = new FormData()
           formData.append("image", this.imageFile)
           const price = document.getElementById("menuPrice0").innerHTML.split('₩')[0]
-          const {data} = await axios.post(`http://localhost:3000/menu/${idx}`,
+          const {data} = await axios.post(`${config.host}/menu/${idx}`,
             {
               name,
               price
             })
-          const result = await axios.post(`http://localhost:3000/menu/${idx}/image/${data.idx}`,
+          const result = await axios.post(`${config.host}/menu/${idx}/image/${data.idx}`,
             formData, {
               headers: {
                 'Content-Type': 'multipart/form-data'

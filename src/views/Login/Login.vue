@@ -35,6 +35,7 @@
   import axios from 'axios'
   import jwt from 'jsonwebtoken'
   import cookie from 'js-cookie'
+  import config from '../../config'
 
   export default {
     name: 'Login',
@@ -53,7 +54,7 @@
       async submitLogin() {
         const {loginData} = this
         try {
-          const {data} = await axios.post('http://localhost:3000/login', {
+          const {data} = await axios.post(`${config.host}/login`, {
             id: loginData.id,
             pw: loginData.pw
           })
