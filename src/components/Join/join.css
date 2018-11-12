@@ -55,6 +55,7 @@
 .join-input {
   width: 91.1vw;
   height: 5.5vh;
+  minHeight: 5.5vh;
   margin-bottom: 3vh !important; }
 
 .join-hide .flex {
