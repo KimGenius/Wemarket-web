@@ -31,7 +31,8 @@
       isEdit: false,
       image: '',
       imageFile: {},
-      imagePath: `${config.host}/uploads/`
+      imagePath: `${config.host}/uploads/`,
+      uploadImage: false
     }),
     props: {
       item: Object,
@@ -65,18 +66,24 @@
           reader.onload = (e) => {
             this.image = e.target.result
             this.imageFile = input.files[0]
+            this.uploadImage = true
           }
           reader.readAsDataURL(input.files[0])
         }
       }
     },
     created() {
+      console.log(this.item.image ? this.imagePath : this.image || '/img/photo.3d1097c9.png')
       this.imagePath += this.item.image
       serverBus.$on('sellerMenuEdit', () => {
         this.isEdit = !this.isEdit
       })
       serverBus.$on('sellerMenuAddComplete', async () => {
         if (this.isPropsAdd) {
+          if (!this.uploadImage) {
+            alert('이미지를 등록해주세요')
+          }
+          serverBus.$emit('sellerMenuAddCompleteNotyet')
           const cookieToken = cookie.get('WMUD')
           const {idx} = jwt.decode(cookieToken)
           const name = document.getElementById("menuName0").innerHTML
@@ -102,16 +109,6 @@
           }
         }
       })
-    },
-    async mounted() {
-      // document.getElementById("menuName").addEventListener("input", function () {
-      //   this.menuName = document.getElementById("menuName").innerHTML
-      //   console.log(this.menuName)
-      // }, false)
-      // document.getElementById("menuPrice").addEventListener("input", function () {
-      //   this.menuName = document.getElementById("menuPrice").innerHTML
-      //   console.log(this.menuName)
-      // }, false)
     }
   }
 </script>

@@ -38,6 +38,12 @@
           serverBus.$emit('sellerMenuAddComplete')
         }
       }
+    },
+    created() {
+      serverBus.$on('sellerMenuAddCompleteNotyet', () => {
+        this.editText = ''
+        this.addText = '완료'
+      })
     }
   }
 </script>
