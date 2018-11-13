@@ -149,6 +149,8 @@
 - 파트너스 PENDING (신청 후 대기) 추가
 - 파트너스 상태 변경 API 연동
 - 잘 되지만 minHeight 추가
+- QR 이미지 크기 고정
+- Login id box option 삭제
 
 ## Project setup
 ```
