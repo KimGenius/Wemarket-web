@@ -1,7 +1,7 @@
 <template>
     <div class="seller-content-intro-box-wrap">
         <p v-bind:contenteditable="isIntroEdit" id="storePhone">{{phone}}</p>
-        <p v-bind:contenteditable="isIntroEdit" id="storeDesc">{{storeDesc}}</p>
+        <textarea style="resize: none;" rows="3" :readonly="!isIntroEdit" v-bind:contenteditable="isIntroEdit" id="storeDesc">{{storeDesc}}</textarea>
         <div :style="onEditWrap" class="editWrap"></div>
     </div>
 </template>

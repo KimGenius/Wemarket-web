@@ -26,7 +26,7 @@
           const cookieToken = cookie.get('WMUD')
           const {idx} = jwt.decode(cookieToken)
           const phone = document.getElementById("storePhone").innerHTML
-          const storeDesc = document.getElementById("storeDesc").innerHTML
+          const storeDesc = document.getElementById("storeDesc").value
           const {status, data} = await axios.put(`${config.host}/user/${idx}`, {
             phone,
             storeDesc
