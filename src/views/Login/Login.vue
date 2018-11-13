@@ -8,9 +8,9 @@
                             :hideDetails=true
                             class='login-input'
                             label='아이디'
+                            solo
                             color='#ff9922'
                             v-model="loginData.id"
-                            box
                     ></v-text-field>
                     <v-text-field
                             :hideDetails=true
