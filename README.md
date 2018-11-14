@@ -163,6 +163,7 @@
 ### 2018-11-15
 - config 기능 추가
 - qrcode 동적 생성 작업
+- partners 리스트 백엔드 연동
 
 ## Project setup
 ```
