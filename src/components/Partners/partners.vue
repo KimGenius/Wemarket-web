@@ -30,7 +30,7 @@
     computed: {
       partnersStyle() {
         return {
-          top: this.isPartners ? '7.9vh' : '92.1vh'
+          bottom: this.isPartners ? '-0vh' : '-84.3vh'
         }
       },
       isPartnersStyle() {
