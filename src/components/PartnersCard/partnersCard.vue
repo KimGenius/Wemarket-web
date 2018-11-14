@@ -1,7 +1,7 @@
 <template>
     <div class="partners-card-wrap">
         <p>{{item.title}}</p>
-        <p>{{item.endDate}}</p>
+        <p>{{item.endDate}} 마감</p>
         <p>{{item.content}}</p>
         <div>
             <p>신청하기</p>
