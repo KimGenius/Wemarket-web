@@ -151,6 +151,11 @@
 - 잘 되지만 minHeight 추가
 - QR 이미지 크기 고정
 - Login id box option 삭제
+- 이미지 등록 필수로 수정
+
+### 2018-11-14
+- 소개 여러줄 수정으로 수정
+- 해상도 오류 수정
 
 ## Project setup
 ```
