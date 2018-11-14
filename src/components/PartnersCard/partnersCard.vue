@@ -4,7 +4,7 @@
         <p>{{item.endDate}} 마감</p>
         <p>{{item.content}}</p>
         <div>
-            <p :style="isSubmitStyle">신청하기</p>
+            <p @click="submit" :style="isSubmitStyle">신청하기</p>
             <p :style="isNotSubmitStyle">신청됨</p>
         </div>
     </div>
@@ -13,6 +13,7 @@
 <script>
   import './partnersCard.scss'
   import config from '../../config'
+  import axios from 'axios'
 
   export default {
     name: "partnersCard",
@@ -25,12 +26,12 @@
     computed: {
       isSubmitStyle() {
         return {
-          display: this.isSubmit ? 'block' : 'none'
+          display: this.isSubmit ? 'none' : 'block'
         }
       },
       isNotSubmitStyle() {
         return {
-          display: this.isSubmit ? 'none' : 'block'
+          display: this.isSubmit ? 'block' : 'none'
         }
       }
     },
@@ -40,6 +41,23 @@
           this.isSubmit = true
         }
       })
+    },
+    methods: {
+      async submit() {
+        try {
+          const {status} = await axios.put(`${config.host}/partners/${this.item.idx}`, {
+            sdx: config.getCookie().idx
+          })
+          if (status === 200) {
+            alert('등록되었습니다')
+            location.reload()
+          }
+        } catch (e) {
+          if (e.message === 'Request failed with status code 409') {
+            alert('이미 등록되었습니다')
+          }
+        }
+      }
     }
   }
 </script>
