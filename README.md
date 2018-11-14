@@ -160,6 +160,10 @@
 - QR 이미지 크기 수정
 - 파트너스 대기중 해상도 문제 수정
 
+### 2018-11-15
+- config 기능 추가
+- qrcode 동적 생성 작업
+
 ## Project setup
 ```
 npm install
