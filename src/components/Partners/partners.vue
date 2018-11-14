@@ -6,6 +6,9 @@
                 content="이 곳에는 내용이 들어갑니다. 따로 요약되거나 하지 않고, 주어진 정보가 최대한 그대로 대입됩니다. 파트너들은 내용을 읽어보고,"
                 date="2018.12.01 마감"
                 :style="isPartnersStyle"
+                v-for="item in partnerList"
+                :key="item.idx"
+                :item="item"
         />
         <PartnersPending :style="isPartnerPendingStyle"></PartnersPending>
         <PartnerNotyet :style="isPartnerNotyetStyle"/>
@@ -19,13 +22,16 @@
   import PartnerNotyet from '../PartnerNotyet'
   import jwt from 'jsonwebtoken'
   import cookie from 'js-cookie'
+  import axios from 'axios'
+  import config from '../../config'
 
   export default {
     name: "partners",
     components: {PartnersCard, PartnersPending, PartnerNotyet},
     data: () => ({
       isPartners: false,
-      sellerLevel: ''
+      sellerLevel: '',
+      partnerList: []
     }),
     computed: {
       partnersStyle() {
@@ -54,10 +60,14 @@
         this.isPartners = !this.isPartners
       }
     },
-    created() {
+    async created() {
       const cookieToken = cookie.get('WMUD')
       const {level} = jwt.decode(cookieToken)
       this.sellerLevel = level
+
+      const {data, status} = await axios.get(`${config.host}/partners`)
+      if (status !== 200) alert('파트너스 글 목록 불러오기에 실패했습니다.')
+      else this.partnerList = data
     }
   }
 </script>

@@ -52,6 +52,7 @@
         this.color = this.color === '' ? 'rgba(0, 0, 0, .6)' : ''
       },
       async submitLogin() {
+        console.log(1)
         const {loginData} = this
         try {
           const {data} = await axios.post(`${config.host}/login`, {
@@ -63,6 +64,7 @@
           alert('환영합니다')
           this.$router.replace('/seller')
         } catch (e) {
+          console.log(e)
           if (e.message === 'Request failed with status code 404'){
             alert('존재하지 않는 계정입니다.')
           }
