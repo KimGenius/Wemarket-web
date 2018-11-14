@@ -7,28 +7,28 @@
                     <v-text-field
                             hide-details
                             class='join-input'
-                            label='아이디'
+                            placeholder='아이디'
                             color='#ff9922'
-                            box
+                            solo
                             v-model='joinData.id'
                     ></v-text-field>
                     <v-text-field
                             hide-details
                             class='join-input'
-                            label='비밀번호'
+                            placeholder='비밀번호'
                             color='#ff9922'
-                            box
                             type='password'
                             v-model='joinData.pw'
+                            solo
                     ></v-text-field>
                     <v-text-field
                             hide-details
                             class='join-input'
-                            label='비밀번호 확인'
+                            placeholder='비밀번호 확인'
                             color='#ff9922'
-                            box
                             type='password'
                             v-model='joinData.pwCheck'
+                            solo
                     ></v-text-field>
                 </v-flex>
                 <p class='join-toggle-btn join-input-title'>점포정보</p>
@@ -36,27 +36,26 @@
                     <v-text-field
                             hide-details
                             class='join-input'
-                            label='점포명'
+                            placeholder='점포명'
                             color='#ff9922'
                             v-model='joinData.storeName'
-                            box
+                            solo
                     ></v-text-field>
                     <v-text-field
                             hide-details
                             class='join-input'
-                            label='업종'
+                            placeholder='업종'
                             v-model='joinData.storeType'
                             color='#ff9922'
-                            box
+                            solo
                     ></v-text-field>
                     <v-text-field
                             hide-details
                             class='join-input'
-                            label='점포 설명'
                             color='#ff9922'
                             v-model='joinData.storeDesc'
                             placeholder='판매 장소와 한줄 소개를 입력하세요'
-                            box
+                            solo
                     ></v-text-field>
                 </v-flex>
                 <p class='join-toggle-btn join-input-title'>사업자 정보</p>
@@ -64,42 +63,42 @@
                     <v-text-field
                             hide-details
                             class='join-input'
-                            label='사업자명'
+                            placeholder='사업자명'
                             color='#ff9922'
                             v-model='joinData.sellerName'
-                            box
+                            solo
                     ></v-text-field>
                     <v-text-field
                             hide-details
                             class='join-input'
-                            label='사업자등록번호'
+                            placeholder='사업자등록번호'
                             v-model='joinData.sellerCode'
                             color='#ff9922'
-                            box
+                            solo
                     ></v-text-field>
                     <v-text-field
                             hide-details
                             class='join-input'
-                            label='전화번호'
+                            placeholder='전화번호'
                             v-model='joinData.phone'
                             color='#ff9922'
-                            box
+                            solo
                     ></v-text-field>
                     <v-text-field
                             hide-details
                             class='join-input'
-                            label='은행입력'
+                            placeholder='은행입력'
                             v-model='joinData.bank'
                             color='#ff9922'
-                            box
+                            solo
                     ></v-text-field>
                     <v-text-field
                             hide-details
                             class='join-input'
-                            label='계좌번호'
+                            placeholder='계좌번호'
                             color='#ff9922'
-                            box
                             v-model='joinData.accountNumber'
+                            solo
                     ></v-text-field>
                 </v-flex>
                 <v-flex>

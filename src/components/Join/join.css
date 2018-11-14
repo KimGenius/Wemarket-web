@@ -54,9 +54,8 @@
 
 .join-input {
   width: 91.1vw;
-  height: 5.5vh;
-  minHeight: 5.5vh;
-  margin-bottom: 3vh !important; }
+  height: 50px;
+  margin-bottom: 10px !important; }
 
 .join-hide .flex {
   padding-left: 4.4vw; }
@@ -78,5 +77,8 @@
   background-color: #ffa945 !important;
   color: #ffffff !important;
   margin: 1.2vh 0 2.2vh 0 !important; }
+
+.v-text-field__slot input {
+  minHeight: 500px !important; }
 
 /*# sourceMappingURL=join.css.map */
