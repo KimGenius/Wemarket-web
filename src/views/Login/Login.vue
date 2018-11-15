@@ -52,7 +52,6 @@
         this.color = this.color === '' ? 'rgba(0, 0, 0, .6)' : ''
       },
       async submitLogin() {
-        console.log(1)
         const {loginData} = this
         try {
           const {data} = await axios.post(`${config.host}/login`, {

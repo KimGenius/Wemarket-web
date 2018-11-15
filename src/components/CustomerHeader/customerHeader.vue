@@ -51,17 +51,20 @@
     }),
     methods: {},
     async created() {
-      const sdx = 38
-      const {data: sellerData, status: sellerStatus} = await axios.get(`${config.host}/seller/${sdx}`)
-      const {data: menuData, status: menuStatus} = await axios.get(`${config.host}/menu/${sdx}`)
-      if (menuStatus === 200 && sellerStatus === 200) {
-        const { phone, storeName, storeDesc } = sellerData
-        this.storeName = storeName
-        this.storeDesc = storeDesc
-        this.phone = phone
-        console.log(menuData)
-        console.log(sellerData)
-      } else {
+      const urlParams = new URLSearchParams(window.location.search)
+      const sdx = urlParams.get('seller')
+      try {
+        const {data: sellerData, status: sellerStatus} = await axios.get(`${config.host}/seller/${sdx}`)
+        const {data: menuData, status: menuStatus} = await axios.get(`${config.host}/menu/${sdx}`)
+        if (menuStatus === 200 && sellerStatus === 200) {
+          const {phone, storeName, storeDesc} = sellerData
+          this.storeName = storeName
+          this.storeDesc = storeDesc
+          this.phone = phone
+        } else {
+          alert('메뉴를 불러오지 못했습니다.')
+        }
+      } catch (e) {
         alert('메뉴를 불러오지 못했습니다.')
       }
     }

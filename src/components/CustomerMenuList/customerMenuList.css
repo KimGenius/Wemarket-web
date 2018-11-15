@@ -1,0 +1,23 @@
+.customer-menu-list-wrap {
+  position: relative;
+  width: 95.6vw;
+  min-height: 46.1vh;
+  float: left;
+  padding-bottom: 7.9vh;
+  margin-left: 2.2vw; }
+
+.customer-menu-list-menu {
+  margin-bottom: 1.1vh; }
+
+.customer-menu-list-menu:nth-child(2n-1) {
+  margin-right: 2.2vw; }
+
+.editWrap {
+  position: fixed;
+  width: 100vw;
+  height: 77.9vh;
+  background-color: rgba(0, 0, 0, 0.25);
+  top: 14.1vh;
+  left: 0; }
+
+/*# sourceMappingURL=customerMenuList.css.map */
