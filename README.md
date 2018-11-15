@@ -168,6 +168,11 @@
 - 파트너스 신청 유무 처리
 - 파트너스 신청 연동
 
+### 2018-11-16
+- Customer 라우팅
+- Customer Header 연동
+- Phone 전화 걸기 연동
+
 ## Project setup
 ```
 npm install
