@@ -1,19 +1,19 @@
 <template>
     <div ref="menuList" class="customer-menu-list-wrap" id="menuList">
-        <SellerMenu v-for="item in menuList" :key="item.idx" :item="item" :style="onEditCard"
+        <CustomerMenu v-for="item in menuList" :key="item.idx" :item="item" :style="onEditCard"
                     class="customer-menu-list-menu"/>
     </div>
 </template>
 
 <script>
   import './customerMenuList.scss'
-  import SellerMenu from '../SellerMenu'
+  import CustomerMenu from '../CustomerMenu'
   import axios from 'axios'
   import config from '../../config'
 
   export default {
     name: "customerMenuList",
-    components: {SellerMenu},
+    components: {CustomerMenu},
     computed: {
       onEditCard() {
         return {

@@ -1,0 +1,58 @@
+.seller-menu-wrap {
+  position: relative;
+  width: 46.7vw;
+  height: 37.9vh;
+  background-color: #fff;
+  border-radius: 5px;
+  float: left;
+  z-index: 10; }
+
+.seller-menu-image,
+.seller-menu-image-input {
+  width: 100%;
+  height: 23.3vh; }
+
+.seller-menu-image-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0; }
+
+.seller-menu-delete {
+  position: absolute;
+  top: -2vh;
+  right: -4vw; }
+
+.menu-name {
+  text-align: center;
+  height: 2.1vh; }
+
+.seller-menu-wrap > p {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.6);
+  font-family: SeoulNamsanEB;
+  font-size: 20px;
+  margin-top: 1vh;
+  margin-bottom: .5vh; }
+
+.seller-menu-wrap > p:last-child {
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.3);
+  margin-top: 0;
+  margin-bottom: 0; }
+
+.customer-menu-order {
+  width: 46.7vw;
+  height: 5.7vh;
+  padding-top: 1.1vh;
+  padding-bottom: 1.1vh;
+  padding-left: 8.9vw; }
+
+.customer-menu-order * {
+  float: left;
+  margin-right: 6.7vw; }
+
+.customer-menu-order p {
+  font-size: 5vw; }
+
+/*# sourceMappingURL=customerMenu.css.map */

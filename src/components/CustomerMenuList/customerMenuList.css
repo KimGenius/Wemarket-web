@@ -4,7 +4,8 @@
   min-height: 46.1vh;
   float: left;
   padding-bottom: 7.9vh;
-  margin-left: 2.2vw; }
+  margin-left: 2.2vw;
+  background-color: #f4f4f4; }
 
 .customer-menu-list-menu {
   margin-bottom: 1.1vh; }
