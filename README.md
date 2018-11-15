@@ -176,6 +176,8 @@
 - Menu 데이터 연동
 - 소개글 연동
 - URL Param Seller 를 이용해 데이터 연동
+- Customer MenuList 작업
+- 장바구니 작업
 
 ## Project setup
 ```
