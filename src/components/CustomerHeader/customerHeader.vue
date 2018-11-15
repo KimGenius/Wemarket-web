@@ -26,6 +26,7 @@
             <p>{{storeName}}</p>
             <div class="phone"
                  @click="clickPhone">
+                <a :href="'tel:'+storePhone"></a>
             </div>
         </div>
     </div>
@@ -46,7 +47,8 @@
         borderBottom: 'none'
       },
       isQRImg: true,
-      storeName: 'ㅁㄴㅇㄹ'
+      storeName: 'ㅁㄴㅇㄹ',
+      storePhone: ''
     }),
     methods: {
       clickPhone() {
@@ -55,9 +57,9 @@
     },
     created() {
       const cookieToken = cookie.get('WMUD')
-      const {storeName} = jwt.decode(cookieToken)
-      console.log(storeName)
+      const {storeName, phone} = jwt.decode(cookieToken)
       this.storeName = storeName
+      this.storePhone = phone
     }
   }
 </script>
