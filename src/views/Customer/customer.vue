@@ -4,6 +4,7 @@
         <CustomerContentIntroBox :phone="phone" :storeDesc="storeDesc"></CustomerContentIntroBox>
         <CustomerContentMenuText></CustomerContentMenuText>
         <CustomerMenuList></CustomerMenuList>
+        <CustomerBox></CustomerBox>
     </div>
 </template>
 
@@ -13,12 +14,13 @@
   import CustomerContentIntroBox from '../../components/CustomerContentIntroBox'
   import CustomerContentMenuText from '../../components/CustomerContentMenuText'
   import CustomerMenuList from '../../components/CustomerMenuList'
+  import CustomerBox from '../../components/CustomerBox'
   import axios from 'axios'
   import config from '../../config'
 
   export default {
     name: "Customer",
-    components: {CustomerHeader, CustomerMenuList, CustomerContentIntroBox, CustomerContentMenuText},
+    components: {CustomerHeader, CustomerMenuList, CustomerContentIntroBox, CustomerContentMenuText, CustomerBox},
     data: () => ({
       storeName: '',
       storeDesc: '',
