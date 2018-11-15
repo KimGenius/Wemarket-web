@@ -172,6 +172,7 @@
 - Customer 라우팅
 - Customer Header 연동
 - Phone 전화 걸기 연동
+- Customer 데이터 연동
 
 ## Project setup
 ```
