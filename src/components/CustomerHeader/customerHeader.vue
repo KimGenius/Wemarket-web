@@ -24,8 +24,7 @@
                 </g>
             </svg>
             <p>{{storeName}}</p>
-            <div class="phone"
-                 @click="clickPhone">
+            <div class="phone">
                 <a :href="'tel:'+storePhone"></a>
             </div>
         </div>
@@ -34,8 +33,8 @@
 
 <script>
   import './customerHeader.scss'
-  import jwt from 'jsonwebtoken'
-  import cookie from 'js-cookie'
+  import axios from 'axios'
+  import config from '../../config'
 
   export default {
     name: "customerHeader",
@@ -47,19 +46,24 @@
         borderBottom: 'none'
       },
       isQRImg: true,
-      storeName: 'ㅁㄴㅇㄹ',
+      storeName: '',
       storePhone: ''
     }),
-    methods: {
-      clickPhone() {
-
+    methods: {},
+    async created() {
+      const sdx = 38
+      const {data: sellerData, status: sellerStatus} = await axios.get(`${config.host}/seller/${sdx}`)
+      const {data: menuData, status: menuStatus} = await axios.get(`${config.host}/menu/${sdx}`)
+      if (menuStatus === 200 && sellerStatus === 200) {
+        const { phone, storeName, storeDesc } = sellerData
+        this.storeName = storeName
+        this.storeDesc = storeDesc
+        this.phone = phone
+        console.log(menuData)
+        console.log(sellerData)
+      } else {
+        alert('메뉴를 불러오지 못했습니다.')
       }
-    },
-    created() {
-      const cookieToken = cookie.get('WMUD')
-      const {storeName, phone} = jwt.decode(cookieToken)
-      this.storeName = storeName
-      this.storePhone = phone
     }
   }
 </script>
