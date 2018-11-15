@@ -173,6 +173,9 @@
 - Customer Header 연동
 - Phone 전화 걸기 연동
 - Customer 데이터 연동
+- Menu 데이터 연동
+- 소개글 연동
+- URL Param Seller 를 이용해 데이터 연동
 
 ## Project setup
 ```
