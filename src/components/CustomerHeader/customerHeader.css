@@ -1,0 +1,42 @@
+.customer-header-wrap {
+  position: relative;
+  width: 100vw;
+  height: 7.9vh;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.33);
+  background-color: #fdfdfd;
+  z-index: 5; }
+
+.customer-header-top {
+  position: relative;
+  width: 100vw;
+  height: 8vh;
+  padding-left: 4.4vw;
+  padding-right: 4.4vw; }
+
+.customer-header-top svg {
+  position: relative;
+  float: left;
+  left: 0;
+  padding-top: 1.7vh;
+  top: 0;
+  width: 8.9vw; }
+
+.customer-header-top p {
+  font-size: 20px;
+  float: left;
+  padding-top: 2.5vh;
+  margin-left: 2.8vw;
+  color: #ff9922;
+  font-family: SeoulNamsanEB;
+  font-weight: bold; }
+
+.customer-header-top .phone {
+  position: relative;
+  float: right;
+  margin-top: 2.4vh;
+  width: 6.7vw;
+  height: 3.3vh;
+  background-size: cover;
+  background-image: url("../../assets/baseline-call-24-px@3x.png"); }
+
+/*# sourceMappingURL=customerHeader.css.map */
