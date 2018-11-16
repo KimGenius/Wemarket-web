@@ -24,7 +24,7 @@
 
 <script>
   import './customerMenu.scss'
-  import {serverBus} from '../../main';
+  import {serverBus} from '../../main'
   import axios from 'axios'
   import jwt from 'jsonwebtoken'
   import cookie from 'js-cookie'
@@ -55,6 +55,11 @@
       countMenu: function (type) {
         if (type === 'plus') this.menuCount++
         else if (type === 'minus' && this.menuCount > 0) this.menuCount--
+        serverBus.$emit('changeCustomerMenu', {
+          menuName: this.item.name,
+          price: this.item.price,
+          count: this.menuCount
+        })
       },
       submitDelete: async function () {
         try {
