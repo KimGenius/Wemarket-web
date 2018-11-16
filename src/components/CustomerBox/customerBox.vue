@@ -29,14 +29,7 @@
   export default {
     name: "customerBox",
     data: () => ({
-      menus: {}
-      /*
-      menus: {
-        a: 10000 (총 가격),
-        b: 10000 (총 가격),
-        ...
-      }
-      */,
+      menus: {},
       phone: '',
       menuPrice: 0,
       isEmptyValue: true,
@@ -51,29 +44,31 @@
       },
       async orderMoney() {
         if (this.phone !== '') {
+          const urlParams = new URLSearchParams(window.location.search)
+          const sdx = urlParams.get('seller')
           let menuText = ''
           const {menus} = this
           Object.keys(menus).map(function (key, index) {
-            console.log(menus[key])
+            // console.log(menus[key])
             menuText += `${key} ${menus[key].split('|')[1]}개\n`
           })
           try {
             await axios.post(`${config.host}/order`, {
               phone: this.phone,
-              sdx: 39,
+              sdx,
               menuText,
               price: this.menuPrice,
               type: 'MONEY',
               dateCreated: moment.tz('Asia/Seoul').format('YYYY-MM-DD HH:mm:ss')
             })
-            console.log({
-              phone: this.phone,
-              sdx: 39,
-              menuText,
-              price: this.menuPrice,
-              type: 'MONEY',
-              dateCreated: moment.tz('Asia/Seoul').format('YYYY-MM-DD HH:mm:ss')
-            })
+            // console.log({
+            //   phone: this.phone,
+            //   sdx,
+            //   menuText,
+            //   price: this.menuPrice,
+            //   type: 'MONEY',
+            //   dateCreated: moment.tz('Asia/Seoul').format('YYYY-MM-DD HH:mm:ss')
+            // })
             alert('주문되었습니다')
             location.reload()
           } catch (e) {
