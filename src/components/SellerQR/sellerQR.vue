@@ -48,7 +48,7 @@
     mounted() {
       const canvas = document.getElementById('qr')
       const jwt = config.getCookie()
-      QRCode.toCanvas(canvas, `${config.host}/customer?seller=${jwt.idx}`, function (error) {
+      QRCode.toCanvas(canvas, `${config.prodHost}/customer?seller=${jwt.idx}`, function (error) {
         if (error) console.log(error)
         console.log('success!')
       })
