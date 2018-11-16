@@ -1,24 +1,43 @@
 <template>
     <div class="order-card-wrap">
-        <div class="order-card-type">
-            <p>카카오페이</p>
+        <div class="order-card-type" :style="isMoney">
+            <p>{{item.type === 'MONEY' ? '현금 결제' : '카카오페이'}}</p>
         </div>
         <div class="order-card-info">
             <p>
-                큐브스테이크 2개<br>
-                치즈큐브스테이크 1개
+                <pre>{{this.menuName}}</pre>
             </p>
-            <p class="order-card-info-date">18.11.03 8:12</p>
-            <p class="order-card-info-price">31,500₩</p>
-            <p class="order-card-info-finish">완료하기</p>
+            <p class="order-card-info-date">{{this.dateCreated}}</p>
+            <p class="order-card-info-price">{{this.item.price.toLocaleString()}}₩</p>
+            <p class="order-card-info-finish">{{this.isComplete}}</p>
         </div>
     </div>
 </template>
 
 <script>
   import './orderCard.scss'
+  import moment from 'moment-timezone'
 
   export default {
-    name: "orderCard"
+    name: "orderCard",
+    props: {
+      item: Object
+    },
+    data: () => ({
+      menuName: '',
+      isComplete: '완료하기'
+    }),
+    computed: {
+      isMoney() {
+        return {
+          backgroundColor: this.item.type === 'MONEY' ? '#1db901' : '#ffe203'
+        }
+      }
+    },
+    beforeMount() {
+      this.menuName = this.item.menuText.replace(/\/n/gi, "<br>")
+      this.dateCreated = moment.tz(this.item.dateCreated, 'Asia/Seoul').format('YYYY-MM-DD HH:mm:ss')
+      this.isComplete = this.item.status === 'PENDING' ? '완료하기' : '완료됨'
+    }
   }
 </script>
