@@ -1,7 +1,7 @@
 <template>
-    <div class="customer-box-wrap">
-        <p :style="isEmpty">장바구니</p>
-        <div class="customer-box-order">
+    <div class="customer-box-wrap" :style="wrapStyle">
+        <p :style="isEmpty">메뉴를 선택해주세요</p>
+        <div :style="isOrder" class="customer-box-order">
             <div class="customer-box-order-top">
                 <img src="../../assets/down.png" alt="down">
                 <p>30,000₩</p>
@@ -40,7 +40,17 @@
     computed: {
       isEmpty() {
         return {
+          display: this.isEmptyValue ? 'block' : 'none'
+        }
+      },
+      isOrder() {
+        return {
           display: !this.isEmptyValue ? 'block' : 'none'
+        }
+      },
+      wrapStyle() {
+        return {
+          bottom: this.isEmptyValue ? '-28.5vh' : '0'
         }
       }
     },
@@ -53,8 +63,6 @@
         else delete this.menus[menuName]
         console.log(this.menus)
         console.log(Object.keys(this.menus).length)
-        console.log()
-        this.$forceUpdate()
         this.isEmptyValue = Object.keys(this.menus).length === 0
       });
     }

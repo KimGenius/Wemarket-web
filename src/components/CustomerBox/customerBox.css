@@ -5,8 +5,11 @@
   height: 36.4vh;
   z-index: 10;
   text-align: center;
-  bottom: -28.5vh;
-  bottom: 0; }
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -ms-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s; }
 
 .customer-box-wrap > p {
   vertical-align: middle;
