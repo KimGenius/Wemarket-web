@@ -3,8 +3,8 @@
         <p :style="isEmpty">메뉴를 선택해주세요</p>
         <div :style="isOrder" class="customer-box-order">
             <div class="customer-box-order-top">
-                <img src="../../assets/down.png" alt="down">
-                <p>30,000₩</p>
+                <img @click="changeWrapStyle" src="../../assets/down.png" alt="down">
+                <p>{{this.menuPrice.toLocaleString()}}₩</p>
             </div>
             <v-text-field
                     :hideDetails=true
@@ -13,8 +13,8 @@
                     solo
                     v-model="phone"
             ></v-text-field>
-            <v-btn class='customer-input order-kakao'>카카오페이 결제</v-btn>
-            <v-btn class='customer-input order-kakao order-money'>현금으로 결제</v-btn>
+            <v-btn @click="orderKakao" class='customer-input order-kakao'>카카오페이 결제</v-btn>
+            <v-btn @click="orderMoney" class='customer-input order-kakao order-money'>현금으로 결제</v-btn>
         </div>
     </div>
 </template>
@@ -35,8 +35,21 @@
       }
       */,
       phone: '',
-      isEmptyValue: true
+      menuPrice: 0,
+      isEmptyValue: true,
+      wrapStyleValue: true
     }),
+    methods: {
+      changeWrapStyle() {
+        if (!this.isEmptyValue) this.wrapStyleValue = !this.wrapStyleValue
+      },
+      orderKakao() {
+        alert('준비중입니다.')
+      },
+      orderMoney() {
+
+      }
+    },
     computed: {
       isEmpty() {
         return {
@@ -50,20 +63,28 @@
       },
       wrapStyle() {
         return {
-          bottom: this.isEmptyValue ? '-28.5vh' : '0'
+          bottom: this.isEmptyValue || this.wrapStyleValue ? '-28.5vh' : '0'
         }
       }
     },
     async created() {
       serverBus.$on('changeCustomerMenu', (menuInfo) => {
         const {menuName, price, count} = menuInfo
+        let {menus, menuPrice} = this
+        menuPrice = 0
         console.log('menuName: ', menuName)
         console.log('price: ', price)
-        if (count !== 0) this.menus[menuName] = price * count
-        else delete this.menus[menuName]
-        console.log(this.menus)
-        console.log(Object.keys(this.menus).length)
-        this.isEmptyValue = Object.keys(this.menus).length === 0
+        if (count !== 0) menus[menuName] = price * count
+        else delete menus[menuName]
+        console.log(menus)
+        console.log(Object.keys(menus).length)
+        Object.keys(menus).map(function (key, index) {
+          const price = menus[key]
+          menuPrice += price
+        });
+        this.menus = menus
+        this.menuPrice = menuPrice
+        this.isEmptyValue = Object.keys(menus).length === 0
       });
     }
   }

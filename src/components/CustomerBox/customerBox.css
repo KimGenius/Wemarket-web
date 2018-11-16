@@ -30,6 +30,9 @@
 .customer-box-order-top > * {
   position: absolute; }
 
+.customer-box-order-top > img {
+  z-index: 5; }
+
 .customer-box-order-top > p {
   width: 100%;
   text-align: right;
