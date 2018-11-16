@@ -49,7 +49,6 @@
           let menuText = ''
           const {menus} = this
           Object.keys(menus).map(function (key, index) {
-            // console.log(menus[key])
             menuText += `${key} ${menus[key].split('|')[1]}개\n`
           })
           try {
@@ -61,14 +60,6 @@
               type: 'MONEY',
               dateCreated: moment.tz('Asia/Seoul').format('YYYY-MM-DD HH:mm:ss')
             })
-            // console.log({
-            //   phone: this.phone,
-            //   sdx,
-            //   menuText,
-            //   price: this.menuPrice,
-            //   type: 'MONEY',
-            //   dateCreated: moment.tz('Asia/Seoul').format('YYYY-MM-DD HH:mm:ss')
-            // })
             alert('주문되었습니다')
             location.reload()
           } catch (e) {
@@ -102,12 +93,8 @@
         const {menuName, price, count} = menuInfo
         let {menus, menuPrice} = this
         menuPrice = 0
-        console.log('menuName: ', menuName)
-        console.log('price: ', price)
         if (count !== 0) menus[menuName] = price * count + '|' + count
         else delete menus[menuName]
-        console.log(menus)
-        console.log(Object.keys(menus).length)
         Object.keys(menus).map(function (key, index) {
           const price = menus[key]
           menuPrice += parseInt(price.split('|')[0])
