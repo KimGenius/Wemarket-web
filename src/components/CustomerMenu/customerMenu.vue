@@ -15,9 +15,9 @@
         <p v-bind:contenteditable="isPropsAdd || isEdit" v-bind:id="'menuPrice'+this.item.idx">
             {{this.item.price.toLocaleString()}}₩</p>
         <div class="customer-menu-order">
-            <img src="../../assets/baseline-minus-24-px.png" alt="minus">
-            <p>1</p>
-            <img src="../../assets/baseline-add-24-px.png" alt="minus">
+            <img @click="countMenu('minus')" src="../../assets/baseline-minus-24-px.png" alt="minus">
+            <p>{{this.menuCount}}</p>
+            <img @click="countMenu('plus')" src="../../assets/baseline-add-24-px.png" alt="minus">
         </div>
     </div>
 </template>
@@ -37,7 +37,8 @@
       image: '',
       imageFile: {},
       imagePath: `${config.host}/uploads/`,
-      uploadImage: false
+      uploadImage: false,
+      menuCount: 0
     }),
     props: {
       item: Object,
@@ -51,6 +52,10 @@
       }
     },
     methods: {
+      countMenu: function (type) {
+        if (type === 'plus') this.menuCount++
+        else if (type === 'minus' && this.menuCount > 0) this.menuCount--
+      },
       submitDelete: async function () {
         try {
           const result = await axios.delete(`${config.host}/menu/${this.item.idx}`)
