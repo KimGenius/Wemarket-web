@@ -5,7 +5,9 @@
         </div>
         <div class="order-card-info">
             <p>
-                <pre>{{this.menuName}}</pre>
+            <pre>{{this.menuName}}</pre>
+            <br>
+            <br>
             </p>
             <p class="order-card-info-date">{{this.dateCreated}}</p>
             <p class="order-card-info-price">{{this.item.price.toLocaleString()}}₩</p>
