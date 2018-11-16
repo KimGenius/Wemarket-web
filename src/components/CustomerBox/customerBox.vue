@@ -22,6 +22,9 @@
 <script>
   import './customerBox.scss'
   import {serverBus} from '../../main'
+  import axios from 'axios'
+  import config from '../../config'
+  import moment from 'moment-timezone'
 
   export default {
     name: "customerBox",
@@ -46,8 +49,36 @@
       orderKakao() {
         alert('준비중입니다.')
       },
-      orderMoney() {
-
+      async orderMoney() {
+        let menuText = ''
+        const {menus} = this
+        Object.keys(menus).map(function (key, index) {
+          console.log(menus[key])
+          menuText += `${key} ${menus[key].split('|')[1]}개\n`
+        })
+        try {
+          await axios.post(`${config.host}/order`, {
+            phone: this.phone,
+            sdx: 39,
+            menuText,
+            price: this.menuPrice,
+            type: 'MONEY',
+            dateCreated: moment.tz('Asia/Seoul').format('YYYY-MM-DD HH:mm:ss')
+          })
+          console.log({
+            phone: this.phone,
+            sdx: 39,
+            menuText,
+            price: this.menuPrice,
+            type: 'MONEY',
+            dateCreated: moment.tz('Asia/Seoul').format('YYYY-MM-DD HH:mm:ss')
+          })
+          alert('주문되었습니다')
+          location.reload()
+        } catch (e) {
+          console.log(e)
+          alert('주문에 실패했습니다.')
+        }
       }
     },
     computed: {
@@ -74,13 +105,13 @@
         menuPrice = 0
         console.log('menuName: ', menuName)
         console.log('price: ', price)
-        if (count !== 0) menus[menuName] = price * count
+        if (count !== 0) menus[menuName] = price * count + '|' + count
         else delete menus[menuName]
         console.log(menus)
         console.log(Object.keys(menus).length)
         Object.keys(menus).map(function (key, index) {
           const price = menus[key]
-          menuPrice += price
+          menuPrice += parseInt(price.split('|')[0])
         });
         this.menus = menus
         this.menuPrice = menuPrice
