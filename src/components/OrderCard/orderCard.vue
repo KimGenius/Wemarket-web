@@ -1,5 +1,8 @@
 <template>
     <div class="order-card-wrap">
+        <div class="order-complete" :style="completeStyle">
+
+        </div>
         <div class="order-card-type" :style="isMoney">
             <p>{{item.type === 'MONEY' ? '현금 결제' : '카카오페이'}}</p>
         </div>
@@ -21,8 +24,6 @@
   import moment from 'moment-timezone'
   import axios from 'axios'
   import config from '../../config'
-  import jwt from 'jsonwebtoken'
-  import cookie from 'js-cookie'
 
   export default {
     name: "orderCard",
@@ -38,19 +39,20 @@
         return {
           backgroundColor: this.item.type === 'MONEY' ? '#1db901' : '#ffe203'
         }
+      },
+      completeStyle() {
+        return {
+          backgroundColor: this.item.status === 'COMPLETE' ? 'rgba(255, 255, 255, 0.4)' : 'transparent'
+        }
       }
     },
     methods: {
       async completeOrder() {
-        console.log(this.item.status === 'PENDING')
         if (this.item.status == 'PENDING') {
           try {
-            // const cookieToken = cookie.get('WMUD')
-            // const {idx} = jwt.decode(cookieToken)
-            // console.log(idx)
-            console.log(await axios.put(`${config.host}/orders/${this.item.idx}`, {
+            await axios.put(`${config.host}/orders/${this.item.idx}`, {
               status: 'COMPLETE'
-            }))
+            })
             alert('주문이 완료되었습니다')
             location.reload()
           } catch (e) {
