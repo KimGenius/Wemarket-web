@@ -36,11 +36,13 @@
       }
     },
     beforeMount() {
-      this.item.udx.split(',').map(u => {
-        if (u == config.getCookie().idx) {
-          this.isSubmit = true
-        }
-      })
+      if (this.item.udx) {
+        this.item.udx.split(',').map(u => {
+          if (u == config.getCookie().idx) {
+            this.isSubmit = true
+          }
+        })
+      }
     },
     methods: {
       async submit() {
