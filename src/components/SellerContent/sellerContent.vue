@@ -18,7 +18,7 @@
   import './sellerContent.scss'
   import SellerContentIntroText from '../SellerContentIntroText'
   import SellerContentIntroBox from '../SellerContentIntroBox'
-  import SellerContentMenuText from '../CustomerContentMenuText'
+  import SellerContentMenuText from '../SellerContentMenuText'
   import SellerMenuList from '../SellerMenuList'
   import OrderList from '../OrderList'
 
