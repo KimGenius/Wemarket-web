@@ -61,7 +61,6 @@
           })
           const token = jwt.sign(data, 'shhhhh')
           cookie.set('WMUD', token)
-          alert('환영합니다')
           this.$router.replace('/seller')
         } catch (e) {
           if (e.message === 'Request failed with status code 404'){
