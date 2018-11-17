@@ -35,6 +35,8 @@
   float: right;
   margin-top: 2.4vh;
   width: 6.7vw;
+  min-width: 6.7vw;
+  min-height: 3.3vh;
   height: 3.3vh;
   background-size: cover;
   background-image: url("../../assets/baseline-call-24-px@3x.png"); }

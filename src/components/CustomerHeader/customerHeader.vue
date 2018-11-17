@@ -25,7 +25,7 @@
             </svg>
             <p>{{storeName}}</p>
             <div class="phone">
-                <a :href="'tel:'+storePhone"></a>
+                <a :href="'tel:'+phone"></a>
             </div>
         </div>
     </div>
@@ -47,7 +47,7 @@
       },
       isQRImg: true,
       storeName: '',
-      storePhone: ''
+      phone: ''
     }),
     methods: {},
     async created() {
