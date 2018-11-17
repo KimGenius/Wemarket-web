@@ -1,14 +1,16 @@
 <template>
-    <div class="seller-menu-wrap">
+    <div class="customer-menu-wrap">
         <img :src="this.item.image ? this.imagePath : this.image || '/img/photo.3d1097c9.png'" alt="photo"
              class="seller-menu-image">
         <p>{{this.item.name}}</p>
         <p>
             {{this.item.price.toLocaleString()}}₩</p>
         <div class="customer-menu-order">
-            <img @click="countMenu('minus')" src="../../assets/baseline-minus-24-px.png" alt="minus">
-            <p>{{this.menuCount}}</p>
-            <img @click="countMenu('plus')" src="../../assets/baseline-add-24-px.png" alt="minus">
+            <div class="customer-menu-count">
+                <img @click="countMenu('minus')" src="../../assets/baseline-minus-24-px.png" alt="minus">
+                <p>{{this.menuCount}}</p>
+                <img @click="countMenu('plus')" src="../../assets/baseline-add-24-px.png" alt="minus">
+            </div>
         </div>
     </div>
 </template>
