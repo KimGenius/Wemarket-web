@@ -191,6 +191,7 @@
 - 주문내역 css 동적으로 수정
 - 메뉴 38만 불러오던 오류 해결
 - customer menu에 필요없는 코드 삭제
+- qr url 수정
 
 ## Project setup
 ```
