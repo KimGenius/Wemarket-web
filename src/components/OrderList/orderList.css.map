@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAAA,gBAAiB;EACf,WAAW,EAAE,KAAK",
+"mappings": "AAAA,gBAAiB;EACf,WAAW,EAAE,KAAK;EAClB,cAAc,EAAE,KAAK",
 "sources": ["orderList.scss"],
 "names": [],
 "file": "orderList.css"
