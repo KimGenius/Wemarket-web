@@ -61,21 +61,23 @@
           })
           const token = jwt.sign(data, 'shhhhh')
           cookie.set('WMUD', token)
-          if (data.status !== 'JOIN') {
-            this.$router.replace('/waitjoin')
-          } else {
+          if (data.status === 'JOIN') {
             this.$router.replace('/seller')
+          } else if (data.status !== 'JOIN') {
+            this.$router.replace('/waitjoin')
           }
         } catch (e) {
-          if (e.message === 'Request failed with status code 404'){
+          if (e.message === 'Request failed with status code 404') {
             alert('존재하지 않는 계정입니다.')
           }
         }
       }
     },
-    created() {
+    async created() {
       const cookie = config.getCookie()
-      if (cookie.status !== 'JOIN') {
+      if (cookie && cookie.status === 'JOIN') {
+        this.$router.replace('/seller')
+      } else if (cookie && cookie.status === 'PENDING') {
         this.$router.replace('/waitjoin')
       }
     }
