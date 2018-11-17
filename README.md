@@ -189,6 +189,8 @@
 - sdx param 값으로 연동
 - 주문 내역 API 연동
 - 주문내역 css 동적으로 수정
+- 메뉴 38만 불러오던 오류 해결
+- customer menu에 필요없는 코드 삭제
 
 ## Project setup
 ```
