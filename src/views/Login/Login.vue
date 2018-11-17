@@ -61,12 +61,22 @@
           })
           const token = jwt.sign(data, 'shhhhh')
           cookie.set('WMUD', token)
-          this.$router.replace('/seller')
+          if (data.status !== 'JOIN') {
+            this.$router.replace('/waitjoin')
+          } else {
+            this.$router.replace('/seller')
+          }
         } catch (e) {
           if (e.message === 'Request failed with status code 404'){
             alert('존재하지 않는 계정입니다.')
           }
         }
+      }
+    },
+    created() {
+      const cookie = config.getCookie()
+      if (cookie.status !== 'JOIN') {
+        this.$router.replace('/waitjoin')
       }
     }
   }
