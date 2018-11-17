@@ -53,7 +53,6 @@
             await axios.put(`${config.host}/orders/${this.item.idx}`, {
               status: 'COMPLETE'
             })
-            alert('주문이 완료되었습니다')
             location.reload()
           } catch (e) {
             console.log(e)
