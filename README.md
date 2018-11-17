@@ -192,6 +192,8 @@
 - 메뉴 38만 불러오던 오류 해결
 - customer menu에 필요없는 코드 삭제
 - qr url 수정
+- 주문 상태 변경 API 연동
+- 주문 완료 디자인 작업
 
 ## Project setup
 ```
