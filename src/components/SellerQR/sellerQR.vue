@@ -40,7 +40,7 @@
       this.storeName = storeName
       this.phone = phone
       this.idx = idx
-      this.url = `http://www.wemarket.kr/customer?sellerId=${idx}`
+      this.url = `http://www.wemarket.kr/customer?seller=${idx}`
       serverBus.$on('toggleSellerQR', () => {
         this.isSellerQR = !this.isSellerQR;
       });
