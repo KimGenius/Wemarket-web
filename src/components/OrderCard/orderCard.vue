@@ -11,7 +11,7 @@
             </p>
             <p class="order-card-info-date">{{this.dateCreated}}</p>
             <p class="order-card-info-price">{{this.item.price.toLocaleString()}}₩</p>
-            <p class="order-card-info-finish">{{this.isComplete}}</p>
+            <p @click="completeOrder" class="order-card-info-finish">{{this.isComplete}}</p>
         </div>
     </div>
 </template>
@@ -19,6 +19,10 @@
 <script>
   import './orderCard.scss'
   import moment from 'moment-timezone'
+  import axios from 'axios'
+  import config from '../../config'
+  import jwt from 'jsonwebtoken'
+  import cookie from 'js-cookie'
 
   export default {
     name: "orderCard",
@@ -33,6 +37,26 @@
       isMoney() {
         return {
           backgroundColor: this.item.type === 'MONEY' ? '#1db901' : '#ffe203'
+        }
+      }
+    },
+    methods: {
+      async completeOrder() {
+        console.log(this.item.status === 'PENDING')
+        if (this.item.status == 'PENDING') {
+          try {
+            // const cookieToken = cookie.get('WMUD')
+            // const {idx} = jwt.decode(cookieToken)
+            // console.log(idx)
+            console.log(await axios.put(`${config.host}/orders/${this.item.idx}`, {
+              status: 'COMPLETE'
+            }))
+            alert('주문이 완료되었습니다')
+            location.reload()
+          } catch (e) {
+            console.log(e)
+            alert('주문 완료중 오류 발생')
+          }
         }
       }
     },
