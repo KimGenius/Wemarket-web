@@ -194,6 +194,12 @@
 - qr url 수정
 - 주문 상태 변경 API 연동
 - 주문 완료 디자인 작업
+- 주문 카운트 정렬 수정
+- phone 번호 연동
+- 이미지 오류 수정
+- login enter event 연동
+- partners 스크롤 수정
+- partners split 에러 해결
 
 ## Project setup
 ```
