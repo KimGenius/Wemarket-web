@@ -26,8 +26,9 @@
     }),
     methods: {
       async fetchData() {
-        const {idx} = {idx: 38}
-        const {data} = await axios.get(`${config.host}/menu/${idx}`)
+        const urlParams = new URLSearchParams(window.location.search)
+        const sdx = urlParams.get('seller')
+        const {data} = await axios.get(`${config.host}/menu/${sdx}`)
         this.menuList = data
       }
     },
