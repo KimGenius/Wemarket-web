@@ -19,6 +19,7 @@
                             solo
                             v-model="loginData.pw"
                             type='password'
+                            v-on:keyup.enter="submitLogin"
                     ></v-text-field>
                     <v-btn @click="submitLogin" class='login-input login-submit'>로그인</v-btn>
                 </v-flex>
@@ -63,7 +64,6 @@
           alert('환영합니다')
           this.$router.replace('/seller')
         } catch (e) {
-          console.log(e)
           if (e.message === 'Request failed with status code 404'){
             alert('존재하지 않는 계정입니다.')
           }
