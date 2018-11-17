@@ -36,7 +36,8 @@
     computed: {
       partnersStyle() {
         return {
-          bottom: this.isPartners ? '-0vh' : '-84.3vh'
+          bottom: this.isPartners ? '-0vh' : '-84.3vh',
+          overflow: this.isPartners ? 'scroll' : 'hidden'
         }
       },
       isPartnersStyle() {
