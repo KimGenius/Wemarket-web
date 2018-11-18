@@ -20,7 +20,10 @@
   float: right;
   padding-top: .6vh;
   font-size: 12px;
+  margin-bottom: 0;
   font-family: SeoulNamsanEB;
-  color: #ff9922; }
+  color: #ff9922;
+  width: 10%;
+  height: 100%; }
 
 /*# sourceMappingURL=sellerContentIntroText.css.map */

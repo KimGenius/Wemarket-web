@@ -19,6 +19,9 @@
 .seller-content-menu > p {
   float: right;
   padding-top: .6vh;
+  width: 10%;
+  height: 100%;
+  margin-bottom: 0;
   font-size: 12px;
   font-family: SeoulNamsanEB;
   color: #ff9922; }
