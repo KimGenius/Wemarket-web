@@ -41,21 +41,26 @@
     computed: {
       onEdit() {
         return {
-          display: this.isPropsAdd || this.isEdit ? 'block' : 'none'
+          display: this.isPropsAdd || this.isEdit ? 'block' : 'none',
+          zIndex: this.isPropsAdd ? '15' : '0'
         }
       }
     },
     methods: {
       submitDelete: async function () {
-        try {
-          const result = await axios.delete(`${config.host}/menu/${this.item.idx}`)
-          if (result.status === 200) {
-            alert('메뉴가 제거되었습니다.')
-            location.reload()
-          }
-        } catch (e) {
-          if (e.message === 'Request failed with status code 404') {
-            alert('없는 메뉴 입니다.')
+        if (this.isPropsAdd) {
+          location.reload()
+        } else {
+          try {
+            const result = await axios.delete(`${config.host}/menu/${this.item.idx}`)
+            if (result.status === 200) {
+              alert('메뉴가 제거되었습니다.')
+              location.reload()
+            }
+          } catch (e) {
+            if (e.message === 'Request failed with status code 404') {
+              alert('없는 메뉴 입니다.')
+            }
           }
         }
       },
