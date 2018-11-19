@@ -60,13 +60,16 @@
             pw: loginData.pw
           })
           const token = jwt.sign(data, 'shhhhh')
-          cookie.set('WMUD', token)
+          cookie.set('WMUD', token, {
+            expires: 0.020833333333333 // 0.5/24 | 30m
+          })
           if (data.status === 'JOIN') {
             this.$router.replace('/seller')
           } else if (data.status !== 'JOIN') {
             this.$router.replace('/waitjoin')
           }
         } catch (e) {
+          console.log(e)
           if (e.message === 'Request failed with status code 404') {
             alert('존재하지 않는 계정입니다.')
           }
