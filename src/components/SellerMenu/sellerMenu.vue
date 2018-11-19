@@ -11,7 +11,7 @@
         <input id="file" type="file" :style="onEdit" @change="processFile($event)" class="seller-menu-image-input">
         <!--<p v-bind:contenteditable="isPropsAdd || isEdit" v-bind:id="'menuName'+this.item.idx">{{this.item.name}}</p>-->
         <!--<p v-bind:contenteditable="isPropsAdd || isEdit" v-bind:id="'menuPrice'+this.item.idx">{{this.item.price.toLocaleString()}}₩</p>-->
-        <p v-bind:contenteditable="isPropsAdd || isEdit" v-bind:id="'menuName'+this.item.idx">{{this.item.name}}</p>
+        <input :readonly="!(isPropsAdd || isEdit)" :placeholder="this.item.name" v-bind:id="'menuName'+this.item.idx">
         <p v-bind:contenteditable="isPropsAdd || isEdit" v-bind:id="'menuPrice'+this.item.idx">
             {{this.item.price.toLocaleString()}}₩</p>
     </div>
