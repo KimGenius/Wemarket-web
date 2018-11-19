@@ -33,7 +33,8 @@
       phone: '',
       menuPrice: 0,
       isEmptyValue: true,
-      wrapStyleValue: true
+      wrapStyleValue: true,
+      storeName: ''
     }),
     methods: {
       changeWrapStyle() {
@@ -48,7 +49,7 @@
           const sdx = urlParams.get('seller')
           let menuText = ''
           const {menus} = this
-          Object.keys(menus).map(function (key, index) {
+          Object.keys(menus).map(function (key) {
             menuText += `${key} ${menus[key].split('|')[1]}개\n`
           })
           try {
@@ -61,8 +62,19 @@
               type: 'MONEY',
               dateCreated
             })
+            try {
+              const {data: sellerData, status: sellerStatus} = await axios.get(`${config.host}/seller/${sdx}`)
+              if (sellerStatus === 200) {
+                const {storeName} = sellerData
+                this.storeName = storeName
+              } else {
+                alert('스토어 정보를 불러오지 못했습니다.')
+              }
+            } catch (e) {
+              alert('스토어 정보를 불러오지 못했습니다.')
+            }
             alert('주문되었습니다')
-            this.$router.replace(`/money?storeName=${'위마켓'}&phone=${this.phone}&dateCreated=${dateCreated}`)
+            this.$router.replace(`/money?storeName=${this.storeName}&phone=${this.phone}&dateCreated=${dateCreated}`)
           } catch (e) {
             console.log(e)
             alert('주문에 실패했습니다.')
@@ -96,7 +108,7 @@
         menuPrice = 0
         if (count !== 0) menus[menuName] = price * count + '|' + count
         else delete menus[menuName]
-        Object.keys(menus).map(function (key, index) {
+        Object.keys(menus).map(function (key) {
           const price = menus[key]
           menuPrice += parseInt(price.split('|')[0])
         });
