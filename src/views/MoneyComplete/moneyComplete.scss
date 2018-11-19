@@ -1,0 +1,87 @@
+.money-complete-wrap {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #53b941;
+}
+
+.money-complete-wrap svg {
+  top: 10.1vh;
+  height: 34vh;
+  left: -10vh;
+  width: 100vw;
+}
+
+.money-complete-wrap p:first-of-type {
+  font-family: SeoulNamsanEB;
+  font-size: 8vh;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+  left: 4.4vw;
+  top: 51.1vh;
+  position: absolute;
+}
+
+.money-complete-wrap p:nth-of-type(2) {
+  height: 88px;
+  font-family: SeoulNamsanEB;
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.94;
+  letter-spacing: normal;
+  text-align: left;
+  color: #fff;
+  left: 4.4vw;
+  top: 69.4vh;
+  position: absolute;
+}
+
+.money-complete-wrap p:nth-of-type(3) {
+  width: 100vw;
+  text-align: center;
+  font-family: SeoulNamsanEB;
+  font-size: 10px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 3.5;
+  letter-spacing: normal;
+  text-align: center;
+  color: #fff;
+  top: 87vh;
+  position: absolute;
+}
+
+.money-complete-like {
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+  left: 4.4vw;
+  position: absolute;
+  width: 91.1vw;
+  height: 7.8vh;
+  top: 90vh;
+  background-color: #57c643 !important;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+  line-height: 7.8vh;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+.money-complete-like > .v-btn__content {
+  color: #ffffff;
+}
+
+.money-complete-wrap .v-btn {
+  margin: 0;
+}

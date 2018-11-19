@@ -52,16 +52,17 @@
             menuText += `${key} ${menus[key].split('|')[1]}개\n`
           })
           try {
+            const dateCreated = moment.tz('Asia/Seoul').format('YYYY-MM-DD HH:mm:ss')
             await axios.post(`${config.host}/order`, {
               phone: this.phone,
               sdx,
               menuText,
               price: this.menuPrice,
               type: 'MONEY',
-              dateCreated: moment.tz('Asia/Seoul').format('YYYY-MM-DD HH:mm:ss')
+              dateCreated
             })
             alert('주문되었습니다')
-            location.reload()
+            this.$router.replace(`/money?storeName=${'위마켓'}&phone=${this.phone}&dateCreated=${dateCreated}`)
           } catch (e) {
             console.log(e)
             alert('주문에 실패했습니다.')

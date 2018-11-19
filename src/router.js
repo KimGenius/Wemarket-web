@@ -5,6 +5,7 @@ import WaitJoin from './views/WaitJoin/WaitJoin.vue'
 import NotFound from './views/NotFound/NotFound.vue'
 import Seller from './views/Seller/Seller.vue'
 import Customer from './views/Customer/customer.vue'
+import MoneyComplete from './views/MoneyComplete/moneyComplete.vue'
 
 Vue.use(Router)
 
@@ -31,6 +32,11 @@ export default new Router({
       path: '/customer',
       name: 'Customer',
       component: Customer
+    },
+    {
+      path: '/money',
+      name: 'MoneyComplete',
+      component: MoneyComplete
     },
     // 전체 적용이라 404는 맨 뒤로
     {
