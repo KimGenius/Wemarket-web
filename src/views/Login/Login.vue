@@ -11,6 +11,7 @@
                             solo
                             color='#ff9922'
                             v-model="loginData.id"
+                            v-on:focus="focusField"
                     ></v-text-field>
                     <v-text-field
                             :hideDetails=true
@@ -20,6 +21,7 @@
                             v-model="loginData.pw"
                             type='password'
                             v-on:keyup.enter="submitLogin"
+                            v-on:focus="focusField"
                     ></v-text-field>
                     <v-btn @click="submitLogin" class='login-input login-submit'>로그인</v-btn>
                 </v-flex>
@@ -49,6 +51,9 @@
       color: ''
     }),
     methods: {
+      focusField: function () {
+        window.scrollTo(0, document.body.scrollHeight)
+      },
       changeColor: function () {
         this.color = this.color === '' ? 'rgba(0, 0, 0, .6)' : ''
       },
