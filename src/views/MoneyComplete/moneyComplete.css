@@ -41,16 +41,11 @@
 
 .money-complete-wrap p:nth-of-type(3) {
   width: 100vw;
-  text-align: center;
   font-family: SeoulNamsanEB;
   font-size: 10px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  letter-spacing: normal;
   text-align: center;
   color: #fff;
-  top: 83vh;
+  top: 85vh;
   position: absolute;
   margin-bottom: 0; }
 

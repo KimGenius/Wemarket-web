@@ -10,9 +10,9 @@
         <p>{{storeName}}<br>
             {{dateCreated}}<br>
             {{phone}}</p>
-        <p>상호 : 애드킹<br>
+        <p>상호 : 애드킹
             대표자 : 조성희<br>
-            사업자등록번호 : 137-20-17849<br>
+            사업자등록번호 : 137-20-17849
             전화번호 : 010-3890-0047</p>
         <v-btn @click="clickLikeBtn" class="money-complete-like">즐겨찾는 매장 저장하기</v-btn>
     </div>
