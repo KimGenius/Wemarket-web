@@ -91,7 +91,7 @@
           serverBus.$emit('sellerMenuAddCompleteNotyet')
           const cookieToken = cookie.get('WMUD')
           const {idx} = jwt.decode(cookieToken)
-          const name = document.getElementById("menuName0").innerHTML
+          const name = document.getElementById("menuName0").value
           const formData = new FormData()
           formData.append("image", this.imageFile)
           const price = document.getElementById("menuPrice0").innerHTML.split('₩')[0]
