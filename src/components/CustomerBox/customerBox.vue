@@ -76,7 +76,6 @@
             alert('주문되었습니다')
             this.$router.replace(`/money?storeName=${this.storeName}&phone=${this.phone}&dateCreated=${dateCreated}`)
           } catch (e) {
-            console.log(e)
             alert('주문에 실패했습니다.')
           }
         } else {
