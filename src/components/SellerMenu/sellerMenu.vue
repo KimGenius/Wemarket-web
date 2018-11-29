@@ -12,8 +12,7 @@
         <!--<p v-bind:contenteditable="isPropsAdd || isEdit" v-bind:id="'menuName'+this.item.idx">{{this.item.name}}</p>-->
         <!--<p v-bind:contenteditable="isPropsAdd || isEdit" v-bind:id="'menuPrice'+this.item.idx">{{this.item.price.toLocaleString()}}₩</p>-->
         <input :readonly="!(isPropsAdd || isEdit)" :placeholder="this.item.name" v-bind:id="'menuName'+this.item.idx">
-        <p v-bind:contenteditable="isPropsAdd || isEdit" v-bind:id="'menuPrice'+this.item.idx">
-            {{this.item.price.toLocaleString()}}₩</p>
+        <input :readonly="!(isPropsAdd || isEdit)" :placeholder="this.item.price.toLocaleString()+'₩'" v-bind:id="'menuPrice'+this.item.idx">
     </div>
 </template>
 
@@ -94,7 +93,7 @@
           const name = document.getElementById("menuName0").value
           const formData = new FormData()
           formData.append("image", this.imageFile)
-          const price = document.getElementById("menuPrice0").innerHTML.split('₩')[0]
+          const price = document.getElementById("menuPrice0").value
           const {data} = await axios.post(`${config.host}/menu/${idx}`,
             {
               name,
