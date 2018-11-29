@@ -41,8 +41,12 @@
       async fetchData() {
         const cookieToken = cookie.get('WMUD')
         const {idx} = jwt.decode(cookieToken)
-        const {data} = await axios.get(`${config.host}/menu/${idx}`)
-        this.menuList = data
+        try {
+          const {data} = await axios.get(`${config.host}/menu/${idx}`)
+          this.menuList = data
+        } catch (err) {
+          console.log(err)
+        }
       }
     },
     async created() {

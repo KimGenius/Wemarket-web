@@ -73,7 +73,7 @@
             } catch (e) {
               alert('스토어 정보를 불러오지 못했습니다.')
             }
-            this.$router.replace(`/money?storeName=${this.storeName}&phone=${this.phone}&dateCreated=${dateCreated}`)
+            this.$router.push(`/money?storeName=${this.storeName}&phone=${this.phone}&dateCreated=${dateCreated}`)
           } catch (e) {
             alert('주문에 실패했습니다.')
           }
