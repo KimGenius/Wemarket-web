@@ -14,7 +14,8 @@
     name: "SellerContentMenuText",
     data: () => ({
       editText: '수정',
-      addText: '추가'
+      addText: '추가',
+      isSubmit: false
     }),
     methods: {
       onEditMode: function () {
@@ -33,9 +34,14 @@
           this.addText = '완료'
           serverBus.$emit('sellerMenuAdd')
         } else {
-          this.editText = '수정'
-          this.addText = '추가'
-          serverBus.$emit('sellerMenuAddComplete')
+          if (!this.isSubmit) {
+            this.addText = '추가'
+            this.editText = '수정'
+            serverBus.$emit('sellerMenuAddComplete')
+            this.isSubmit = true
+          } else {
+            alert('메뉴 추가중입니다!')
+          }
         }
       }
     },
