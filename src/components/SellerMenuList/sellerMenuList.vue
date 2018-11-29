@@ -58,7 +58,7 @@
             propsData: {
               item: {
                 idx: 0,
-                name: '메뉴 이름',
+                name: '이름을 입력하세요',
                 price: 0
               },
               isPropsAdd: this.isAdd
