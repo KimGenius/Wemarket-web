@@ -6,7 +6,8 @@
              class="seller-menu-delete"
              :style="onEdit"
              @click="submitDelete">
-        <img :src="this.item.image ? this.imagePath : this.image || '/img/photo.3d1097c9.png'" alt="photo"
+        <img :src="this.item.image ? this.imagePath : this.imagePath"
+             alt="photo"
              class="seller-menu-image">
         <input id="file" type="file" :style="onEdit" @change="processFile($event)" class="seller-menu-image-input">
         <!--<p v-bind:contenteditable="isPropsAdd || isEdit" v-bind:id="'menuName'+this.item.idx">{{this.item.name}}</p>-->
@@ -77,8 +78,9 @@
       }
     },
     created() {
-      console.log(this.item.image ? this.imagePath : this.image || '/img/photo.3d1097c9.png')
-      this.imagePath += this.item.image
+      this.imagePath = this.item.image ?
+        this.imagePath + this.item.image :
+        `${config.host}/image/photo.png`
       serverBus.$on('sellerMenuEdit', () => {
         this.isEdit = !this.isEdit
       })
