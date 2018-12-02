@@ -13,6 +13,7 @@
   import Partners from '../../components/Partners'
   import SellerQR from '../../components/SellerQR'
   import './seller.scss'
+  import {serverBus} from '../../main'
 
   export default {
     name: "Seller",
@@ -27,6 +28,7 @@
       },
       onRight: function () {
         this.isLeft = false
+        serverBus.$emit('getOrderList')
       }
     }
   }

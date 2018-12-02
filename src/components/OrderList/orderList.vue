@@ -11,6 +11,7 @@
   import config from '../../config'
   import jwt from 'jsonwebtoken'
   import cookie from 'js-cookie'
+  import {serverBus} from '../../main'
 
   export default {
     name: "orders",
@@ -23,6 +24,14 @@
       const {idx} = jwt.decode(cookieToken)
       const {data} = await axios.get(`${config.host}/orders/${idx}`)
       this.orderList = data
+    },
+    async created() {
+      serverBus.$on('getOrderList', async () => {
+        const cookieToken = cookie.get('WMUD')
+        const {idx} = jwt.decode(cookieToken)
+        const {data} = await axios.get(`${config.host}/orders/${idx}`)
+        this.orderList = data
+      })
     }
   }
 </script>
