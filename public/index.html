@@ -14,4 +14,18 @@
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
+  <script>
+    if (window.innerWidth > window.innerHeight) {
+      alert('모바일에서만 접근 가능합니다')
+      document.getElementById('app').innerHTML = ''
+    }
+    window.onresize = function (event) {
+      if (window.innerWidth > window.innerHeight) {
+        alert('모바일에서만 접근 가능합니다')
+        document.getElementById('app').innerHTML = ''
+      } else {
+        location.href = '/login'
+      }
+    }
+  </script>
 </html>
