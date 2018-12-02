@@ -13,7 +13,8 @@
         <!--<p v-bind:contenteditable="isPropsAdd || isEdit" v-bind:id="'menuName'+this.item.idx">{{this.item.name}}</p>-->
         <!--<p v-bind:contenteditable="isPropsAdd || isEdit" v-bind:id="'menuPrice'+this.item.idx">{{this.item.price.toLocaleString()}}₩</p>-->
         <input :readonly="!(isPropsAdd || isEdit)" :placeholder="this.item.name" v-bind:id="'menuName'+this.item.idx">
-        <input :readonly="!(isPropsAdd || isEdit)" :placeholder="this.item.price.toLocaleString()+'₩'" v-bind:id="'menuPrice'+this.item.idx">
+        <input :readonly="!(isPropsAdd || isEdit)" :placeholder="this.item.price.toLocaleString()+'₩'"
+               v-bind:id="'menuPrice'+this.item.idx">
     </div>
 </template>
 
@@ -67,9 +68,13 @@
       processFile(event) {
         const input = event.target;
         if (input.files && input.files[0]) {
+          if (input.files[0].size > 100000) {
+            return alert('1메가 이하의 사이즈로 올려주세요')
+          }
           const reader = new FileReader()
           reader.onload = (e) => {
             this.image = e.target.result
+            this.imagePath = e.target.result
             this.imageFile = input.files[0]
             this.uploadImage = true
           }
